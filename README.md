@@ -14,6 +14,13 @@ To create a virtual environment and install the dependencies, follow these steps
     source env/bin/activate
     ```
 
+    ```
+    .\env\Scripts\activate
+
+    #if using GPU
+    pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+    ```
+
 3. Install the dependencies:
     ```sh
     pip install -r requirements.txt
