@@ -1,23 +1,36 @@
+from langchain.chains import ConversationalRetrievalChain
+from langchain_huggingface import HuggingFacePipeline  # Perbaikan impor
 from transformers import pipeline
 import torch
+import re
 
-def generate_answer(retriever, hybrid_results, question):
+def generate_answer(retriever, history, question):
+    """ Conversational Retrieval Chain dengan cek jawaban kosong """
     pipe = pipeline(
-        "text-generation", 
-        model="TinyLlama/TinyLlama-1.1B-Chat-v1.0", 
-        torch_dtype=torch.bfloat16, 
+        "text-generation",
+        model="TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+        torch_dtype=torch.bfloat16,
         device_map="auto"
     )
 
-    retrived_text = '\n\n'.join([doc.page_content for doc in hybrid_results])
-    messages = [
-        {
-            "role": "system",
-            "content": f'''Use the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer.
-            context: {retrived_text}'''
-        },
-        {"role": "user", "content": f'{question}'}
-    ]
-    prompt = pipe.tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
-    outputs = pipe(prompt, max_new_tokens=256, do_sample=True, temperature=0.7, top_k=50, top_p=0.95)
-    return outputs[0]["generated_text"][len(prompt):]
+    llm = HuggingFacePipeline(pipeline=pipe)  # Menggunakan versi baru
+
+    qa_chain = ConversationalRetrievalChain.from_llm(
+        llm=llm,
+        retriever=retriever,
+        return_source_documents=True
+    )
+
+    response = qa_chain({"question": question, "chat_history": history})
+
+    if not response["answer"]:  # Cek jika jawaban kosong
+        print("⚠️  Model tidak bisa memberikan jawaban yang valid.")
+        return "Maaf, saya tidak bisa menjawab pertanyaan ini."
+
+    return response["answer"]
+
+def clean_answer(answer):
+    """ Membersihkan jawaban dari redundansi dan format yang aneh """
+    answer = re.sub(r"\n+", "\n", answer.strip())  # Hapus newline berlebih
+    answer = re.sub(r"(Answer:|Response:)", "", answer, flags=re.IGNORECASE).strip()  # Hapus awalan berlebih
+    return answer
