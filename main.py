@@ -51,6 +51,12 @@ if not docs:
 
 retriever = get_hybrid_retriever(db, docs)
 
+# Cek apakah BM25 berhasil dibuat
+if retriever.bm25:
+    print("✅ BM25 berhasil diinisialisasi!")
+else:
+    print("⚠️ BM25 tidak tersedia, hanya FAISS yang digunakan.")
+
 # **7. Proses Pertanyaan & Hasilkan Jawaban**
 question = "When did Virgin Australia start operating?"
 chat_history = []  # Bisa diperluas jika ingin percakapan berkelanjutan
