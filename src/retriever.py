@@ -36,8 +36,8 @@ class HybridRetriever(BaseRetriever, BaseModel):
             return []
 
         # FAISS Semantic Search
-        faiss_weight = 0.6  # Bobot untuk FAISS
-        bm25_weight = 0.4  # Bobot untuk BM25
+        faiss_weight = 0.7  # Bobot untuk FAISS
+        bm25_weight = 0.3  # Bobot untuk BM25
         k_faiss = int(self.k * faiss_weight)
         k_bm25 = self.k - k_faiss  # Sisa kuota untuk BM25
 

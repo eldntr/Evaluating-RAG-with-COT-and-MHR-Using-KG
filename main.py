@@ -61,17 +61,19 @@ else:
 question = "When did Virgin Australia start operating?"
 chat_history = []  # Bisa diperluas jika ingin percakapan berkelanjutan
 
+raw_answer_cot = generate_answer(retriever, chat_history, question, prompt_type="cot")
+cleaned_cot = clean_answer(raw_answer_cot)
+
+raw_answer_multihop = generate_answer(retriever, chat_history, question, prompt_type="multihop")
+cleaned_multihop = clean_answer(raw_answer_multihop)
+
 print(f"\n🔍 Query: {question}")
 retrieved_docs = retriever.retrieve(question)
 
-# **8. Gunakan Conversational Retrieval Chain untuk Jawaban**
-raw_answer = generate_answer(retriever, chat_history, question)
-
-# **9. Bersihkan Jawaban Sebelum Ditampilkan**
-cleaned_answer = clean_answer(raw_answer)
-
-print("\n📌 Answer:")
-print(cleaned_answer)
+print("\n🔍 **Chain of Thought Answer:**")
+print(cleaned_cot)
+print("\n🔍 **Multihop Answer:**")
+print(cleaned_multihop)
 
 # Tutup koneksi SQLite
 conn.close()
