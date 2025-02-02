@@ -15,7 +15,7 @@ class HybridRetriever(BaseRetriever, BaseModel):
         "arbitrary_types_allowed": True  # Izinkan tipe non-standar seperti FAISS dan BM25
     }
 
-    def __init__(self, vectorstore: FAISS, documents: List[Document], k: int = 4):
+    def __init__(self, vectorstore: FAISS, documents: List[Document], k: int = 2):
         super().__init__(vectorstore=vectorstore, documents=documents, k=k, bm25=None)
 
         if documents and all(hasattr(doc, "page_content") and isinstance(doc.page_content, str) for doc in documents):
@@ -36,8 +36,8 @@ class HybridRetriever(BaseRetriever, BaseModel):
             return []
 
         # FAISS Semantic Search
-        faiss_weight = 0.7  # Bobot untuk FAISS
-        bm25_weight = 0.3  # Bobot untuk BM25
+        faiss_weight = 1  # Bobot untuk FAISS
+        bm25_weight = 0  # Bobot untuk BM25
         k_faiss = int(self.k * faiss_weight)
         k_bm25 = self.k - k_faiss  # Sisa kuota untuk BM25
 

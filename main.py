@@ -58,7 +58,7 @@ else:
     print("⚠️ BM25 tidak tersedia, hanya FAISS yang digunakan.")
 
 # **7. Proses Pertanyaan & Hasilkan Jawaban**
-question = "When did Virgin Australia start operating?"
+question = "When was Tomoaki Komorida born?"
 chat_history = []  # Bisa diperluas jika ingin percakapan berkelanjutan
 
 raw_answer_cot = generate_answer(retriever, chat_history, question, prompt_type="cot")

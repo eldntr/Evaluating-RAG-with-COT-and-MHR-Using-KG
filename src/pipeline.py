@@ -10,17 +10,14 @@ COT_PROMPT = PromptTemplate(
     template="""
     **Question**: {question}
     **Context**: {context}
-
     **Instructions**:
     1. Analyze the question and identify key elements (e.g., dates, locations, entities).
     2. Extract relevant information from the context.
     3. Formulate a concise answer using the identified information.
-
     **Example Format**:
     1. Step 1: Identified keywords "[key_term1]" and "[key_term2]".
     2. Step 2: Found relevant information: "[excerpt_from_context]".
     Final Answer: [Concise answer based on context]
-
     **Answer for This Question**:
     """
 )
@@ -29,12 +26,10 @@ MULTIHOP_PROMPT = PromptTemplate(
     input_variables=["question", "context"],
     template="""
     Question: {question}
-
     Multi-Source Context:
     ---
     {context}
     ---
-
     Synthesize a comprehensive answer by integrating all relevant information from the context.
     Ensure the answer addresses all aspects of the question.
     
