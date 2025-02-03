@@ -22,21 +22,6 @@ COT_PROMPT = PromptTemplate(
     """
 )
 
-MULTIHOP_PROMPT = PromptTemplate(
-    input_variables=["question", "context"],
-    template="""
-    Question: {question}
-    Multi-Source Context:
-    ---
-    {context}
-    ---
-    Synthesize a comprehensive answer by integrating all relevant information from the context.
-    Ensure the answer addresses all aspects of the question.
-    
-    Answer:
-    """
-)
-
 def generate_answer(retriever, history, question, prompt_type="default"):
     # Ambil dan format dokumen sesuai kebutuhan
     retrieved_docs = retriever.get_relevant_documents(question)
@@ -44,19 +29,6 @@ def generate_answer(retriever, history, question, prompt_type="default"):
     if prompt_type == "cot":
         context = "\n".join([doc.page_content for doc in retrieved_docs[:3]])
         selected_prompt = COT_PROMPT
-    elif prompt_type == "multihop":
-        # Langkah 1: Ambil konteks awal
-        primary_docs = retriever.get_relevant_documents(question)
-        context1 = "\n".join([doc.page_content for doc in primary_docs[:2]])
-        
-        # Langkah 2: Reformulasi query untuk hop kedua
-        revised_query = f"{question} Berdasarkan: {context1[:200]}"
-        secondary_docs = retriever.get_relevant_documents(revised_query)
-        context2 = "\n".join([doc.page_content for doc in secondary_docs[:2]])
-        
-        # Gabungkan konteks
-        context = f"Konteks 1:\n{context1}\n\nKonteks 2:\n{context2}"
-        selected_prompt = MULTIHOP_PROMPT
     else:
         context = "\n".join([doc.page_content for doc in retrieved_docs])
         selected_prompt = PromptTemplate.from_template("{question}\n\nContext: {context}")
