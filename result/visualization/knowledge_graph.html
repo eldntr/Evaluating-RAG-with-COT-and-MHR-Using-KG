@@ -1,0 +1,280 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 600px;
+                 background-color: #222222;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+             #loadingBar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width: 100%;
+                 height: 600px;
+                 background-color:rgba(200,200,200,0.8);
+                 -webkit-transition: all 0.5s ease;
+                 -moz-transition: all 0.5s ease;
+                 -ms-transition: all 0.5s ease;
+                 -o-transition: all 0.5s ease;
+                 transition: all 0.5s ease;
+                 opacity:1;
+             }
+
+             #bar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width:20px;
+                 height:20px;
+                 margin:auto auto auto auto;
+                 border-radius:11px;
+                 border:2px solid rgba(30,30,30,0.05);
+                 background: rgb(0, 173, 246); /* Old browsers */
+                 box-shadow: 2px 0px 4px rgba(0,0,0,0.4);
+             }
+
+             #border {
+                 position:absolute;
+                 top:10px;
+                 left:10px;
+                 width:500px;
+                 height:23px;
+                 margin:auto auto auto auto;
+                 box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+                 border-radius:10px;
+             }
+
+             #text {
+                 position:absolute;
+                 top:8px;
+                 left:530px;
+                 width:30px;
+                 height:50px;
+                 margin:auto auto auto auto;
+                 font-size:22px;
+                 color: #000000;
+             }
+
+             div.outerBorder {
+                 position:relative;
+                 top:400px;
+                 width:600px;
+                 height:44px;
+                 margin:auto auto auto auto;
+                 border:8px solid rgba(0,0,0,0.1);
+                 background: rgb(252,252,252); /* Old browsers */
+                 background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+                 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+                 background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+                 background: -o-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+                 background: -ms-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
+                 background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
+                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+                 border-radius:72px;
+                 box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+             }
+             
+
+             
+             #config {
+                 float: left;
+                 width: 400px;
+                 height: 600px;
+             }
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+            <div id="loadingBar">
+              <div class="outerBorder">
+                <div id="text">0%</div>
+                <div id="border">
+                  <div id="bar"></div>
+                </div>
+              </div>
+            </div>
+        
+        
+            <div id="config"></div>
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "font": {"color": "white"}, "id": "Ed Wood", "label": "Ed Wood", "shape": "dot", "title": "Ed Wood"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "biographical", "label": "biographical", "shape": "dot", "title": "biographical"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Tim Burton", "label": "Tim Burton", "shape": "dot", "title": "Tim Burton"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Johnny Depp", "label": "Johnny Depp", "shape": "dot", "title": "Johnny Depp"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Patricia Arquette", "label": "Patricia Arquette", "shape": "dot", "title": "Patricia Arquette"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Jeffrey Jones", "label": "Jeffrey Jones", "shape": "dot", "title": "Jeffrey Jones"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Lisa Marie", "label": "Lisa Marie", "shape": "dot", "title": "Lisa Marie"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Bill Murray", "label": "Bill Murray", "shape": "dot", "title": "Bill Murray"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Sarah Jessica Parker", "label": "Sarah Jessica Parker", "shape": "dot", "title": "Sarah Jessica Parker"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "1994", "label": "1994", "shape": "dot", "title": "1994"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Bela Lugosi", "label": "Bela Lugosi", "shape": "dot", "title": "Bela Lugosi"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Martin Landau", "label": "Martin Landau", "shape": "dot", "title": "Martin Landau"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "comedy-drama", "label": "comedy-drama", "shape": "dot", "title": "comedy-drama"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Lisa", "label": "Lisa", "shape": "dot", "title": "Lisa"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "comedy-drama film", "label": "comedy-drama film", "shape": "dot", "title": "comedy-drama film"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Patric Arquette", "label": "Patric Arquette", "shape": "dot", "title": "Patric Arquette"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "biographical period", "label": "biographical period", "shape": "dot", "title": "biographical period"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Patty Arquette", "label": "Patty Arquette", "shape": "dot", "title": "Patty Arquette"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Scott Derrickson", "label": "Scott Derrickson", "shape": "dot", "title": "Scott Derrickson"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "July 16, 1966", "label": "July 16, 1966", "shape": "dot", "title": "July 16, 1966"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Sinister", "label": "Sinister", "shape": "dot", "title": "Sinister"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "The Exorcism of Emily Rose", "label": "The Exorcism of Emily Rose", "shape": "dot", "title": "The Exorcism of Emily Rose"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Deliver Us From Evil", "label": "Deliver Us From Evil", "shape": "dot", "title": "Deliver Us From Evil"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Doctor Strange", "label": "Doctor Strange", "shape": "dot", "title": "Doctor Strange"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Marvel Cinematic Universe", "label": "Marvel Cinematic Universe", "shape": "dot", "title": "Marvel Cinematic Universe"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "horror film", "label": "horror film", "shape": "dot", "title": "horror film"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "horror films", "label": "horror films", "shape": "dot", "title": "horror films"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "American", "label": "American", "shape": "dot", "title": "American"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Los Angeles", "label": "Los Angeles", "shape": "dot", "title": "Los Angeles"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Woodson", "label": "Woodson", "shape": "dot", "title": "Woodson"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "census-designated place", "label": "census-designated place", "shape": "dot", "title": "census-designated place"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Pulaski County, Arkansas", "label": "Pulaski County, Arkansas", "shape": "dot", "title": "Pulaski County, Arkansas"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Pulaski County", "label": "Pulaski County", "shape": "dot", "title": "Pulaski County"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Arkansas", "label": "Arkansas", "shape": "dot", "title": "Arkansas"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "United States", "label": "United States", "shape": "dot", "title": "United States"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Pul", "label": "Pul", "shape": "dot", "title": "Pul"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Little Rock\u2013North Little Rock\u2013Conway Metropolitan Statistical Area", "label": "Little Rock\u2013North Little Rock\u2013Conway Metropolitan Statistical Area", "shape": "dot", "title": "Little Rock\u2013North Little Rock\u2013Conway Metropolitan Statistical Area"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Pulaski County,", "label": "Pulaski County,", "shape": "dot", "title": "Pulaski County,"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Woodson Lake", "label": "Woodson Lake", "shape": "dot", "title": "Woodson Lake"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Wood Hollow", "label": "Wood Hollow", "shape": "dot", "title": "Wood Hollow"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "United", "label": "United", "shape": "dot", "title": "United"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Dawn of the Dead", "label": "Dawn of the Dead", "shape": "dot", "title": "Dawn of the Dead"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Tyler Bates", "label": "Tyler Bates", "shape": "dot", "title": "Tyler Bates"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "300", "label": "300", "shape": "dot", "title": "300"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Sucker Punch", "label": "Sucker Punch", "shape": "dot", "title": "Sucker Punch"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "John Wick", "label": "John Wick", "shape": "dot", "title": "John Wick"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Guardians of the Galaxy", "label": "Guardians of the Galaxy", "shape": "dot", "title": "Guardians of the Galaxy"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "2017 sequel", "label": "2017 sequel", "shape": "dot", "title": "2017 sequel"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "June 5, 1965", "label": "June 5, 1965", "shape": "dot", "title": "June 5, 1965"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "The Pale Emperor", "label": "The Pale Emperor", "shape": "dot", "title": "The Pale Emperor"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Marilyn Manson", "label": "Marilyn Manson", "shape": "dot", "title": "Marilyn Manson"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Heaven Upside Down", "label": "Heaven Upside Down", "shape": "dot", "title": "Heaven Upside Down"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "its 2017 sequel", "label": "its 2017 sequel", "shape": "dot", "title": "its 2017 sequel"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "action", "label": "action", "shape": "dot", "title": "action"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Edward Davis Wood Jr.", "label": "Edward Davis Wood Jr.", "shape": "dot", "title": "Edward Davis Wood Jr."}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "October 10, 1924", "label": "October 10, 1924", "shape": "dot", "title": "October 10, 1924"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "December 10, 1978", "label": "December 10, 1978", "shape": "dot", "title": "December 10, 1978"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Davis Wood Jr.", "label": "Davis Wood Jr.", "shape": "dot", "title": "Davis Wood Jr."}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Davis Wood", "label": "Davis Wood", "shape": "dot", "title": "Davis Wood"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "filmmaker", "label": "filmmaker", "shape": "dot", "title": "filmmaker"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "producer", "label": "producer", "shape": "dot", "title": "producer"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Edward Davis Wood", "label": "Edward Davis Wood", "shape": "dot", "title": "Edward Davis Wood"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Edward Davis Wood Jr", "label": "Edward Davis Wood Jr", "shape": "dot", "title": "Edward Davis Wood Jr"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Davis Wood Jr", "label": "Davis Wood Jr", "shape": "dot", "title": "Davis Wood Jr"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "director", "label": "director", "shape": "dot", "title": "director"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "David Wood Jr.", "label": "David Wood Jr.", "shape": "dot", "title": "David Wood Jr."}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Deliver Us from Evil", "label": "Deliver Us from Evil", "shape": "dot", "title": "Deliver Us from Evil"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "2014", "label": "2014", "shape": "dot", "title": "2014"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Jerry Bruckheimer", "label": "Jerry Bruckheimer", "shape": "dot", "title": "Jerry Bruckheimer"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Eric Bana", "label": "Eric Bana", "shape": "dot", "title": "Eric Bana"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "\u00c9dgar Ram\u00edrez", "label": "\u00c9dgar Ram\u00edrez", "shape": "dot", "title": "\u00c9dgar Ram\u00edrez"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Sean Harris", "label": "Sean Harris", "shape": "dot", "title": "Sean Harris"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Olivia Munn", "label": "Olivia Munn", "shape": "dot", "title": "Olivia Munn"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Joel McHale", "label": "Joel McHale", "shape": "dot", "title": "Joel McHale"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "July 2, 2014", "label": "July 2, 2014", "shape": "dot", "title": "July 2, 2014"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "supernatural horror film", "label": "supernatural horror film", "shape": "dot", "title": "supernatural horror film"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Beware the Night", "label": "Beware the Night", "shape": "dot", "title": "Beware the Night"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "2001", "label": "2001", "shape": "dot", "title": "2001"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Ralph Sarchie", "label": "Ralph Sarchie", "shape": "dot", "title": "Ralph Sarchie"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Lisa Collier Cool", "label": "Lisa Collier Cool", "shape": "dot", "title": "Lisa Collier Cool"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "supernatural horror", "label": "supernatural horror", "shape": "dot", "title": "supernatural horror"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "supernatural", "label": "supernatural", "shape": "dot", "title": "supernatural"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Adam Collis", "label": "Adam Collis", "shape": "dot", "title": "Adam Collis"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Duke University", "label": "Duke University", "shape": "dot", "title": "Duke University"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "University of California, Los Angeles", "label": "University of California, Los Angeles", "shape": "dot", "title": "University of California, Los Angeles"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Love in the Ruins", "label": "Love in the Ruins", "shape": "dot", "title": "Love in the Ruins"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Hundred Percent", "label": "Hundred Percent", "shape": "dot", "title": "Hundred Percent"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Eric Koyanagi", "label": "Eric Koyanagi", "shape": "dot", "title": "Eric Koyanagi"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "1998", "label": "1998", "shape": "dot", "title": "1998"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "University of Southern California", "label": "University of Southern California", "shape": "dot", "title": "University of Southern California"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "2012", "label": "2012", "shape": "dot", "title": "2012"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Ethan Hawke", "label": "Ethan Hawke", "shape": "dot", "title": "Ethan Hawke"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "true-crime", "label": "true-crime", "shape": "dot", "title": "true-crime"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "C. Robert Cargill", "label": "C. Robert Cargill", "shape": "dot", "title": "C. Robert Cargill"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Robert Cargill", "label": "Robert Cargill", "shape": "dot", "title": "Robert Cargill"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "horror", "label": "horror", "shape": "dot", "title": "horror"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Conrad Brooks", "label": "Conrad Brooks", "shape": "dot", "title": "Conrad Brooks"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "January 3, 1931", "label": "January 3, 1931", "shape": "dot", "title": "January 3, 1931"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Baltimore, Maryland", "label": "Baltimore, Maryland", "shape": "dot", "title": "Baltimore, Maryland"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Plan 9 from Outer Space", "label": "Plan 9 from Outer Space", "shape": "dot", "title": "Plan 9 from Outer Space"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Glen or Glenda", "label": "Glen or Glenda", "shape": "dot", "title": "Glen or Glenda"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Jail Bait", "label": "Jail Bait", "shape": "dot", "title": "Jail Bait"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Baltimore", "label": "Baltimore", "shape": "dot", "title": "Baltimore"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Maryland", "label": "Maryland", "shape": "dot", "title": "Maryland"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "1948", "label": "1948", "shape": "dot", "title": "1948"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "superhero film", "label": "superhero film", "shape": "dot", "title": "superhero film"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Benedict Cumberbatch", "label": "Benedict Cumberbatch", "shape": "dot", "title": "Benedict Cumberbatch"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Chiwetel Ejiofor", "label": "Chiwetel Ejiofor", "shape": "dot", "title": "Chiwetel Ejiofor"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Rachel McAdams", "label": "Rachel McAdams", "shape": "dot", "title": "Rachel McAdams"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Benedict Wong", "label": "Benedict Wong", "shape": "dot", "title": "Benedict Wong"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Michael Stuhlbarg", "label": "Michael Stuhlbarg", "shape": "dot", "title": "Michael Stuhlbarg"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Benjamin Bratt", "label": "Benjamin Bratt", "shape": "dot", "title": "Benjamin Bratt"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Scott Adkins", "label": "Scott Adkins", "shape": "dot", "title": "Scott Adkins"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Mads Mikkelsen", "label": "Mads Mikkelsen", "shape": "dot", "title": "Mads Mikkelsen"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Tilda Swinton", "label": "Tilda Swinton", "shape": "dot", "title": "Tilda Swinton"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Chiwetel", "label": "Chiwetel", "shape": "dot", "title": "Chiwetel"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Stephen Strange", "label": "Stephen Strange", "shape": "dot", "title": "Stephen Strange"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Rachel", "label": "Rachel", "shape": "dot", "title": "Rachel"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Marvel Comics", "label": "Marvel Comics", "shape": "dot", "title": "Marvel Comics"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "character of the same name", "label": "character of the same name", "shape": "dot", "title": "character of the same name"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Marvel Studios", "label": "Marvel Studios", "shape": "dot", "title": "Marvel Studios"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Walt Disney Studios Motion Pictures", "label": "Walt Disney Studios Motion Pictures", "shape": "dot", "title": "Walt Disney Studios Motion Pictures"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Benedict", "label": "Benedict", "shape": "dot", "title": "Benedict"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Benedict Cumber", "label": "Benedict Cumber", "shape": "dot", "title": "Benedict Cumber"}, {"color": "#97c2fc", "font": {"color": "white"}, "id": "Jon Spaihts", "label": "Jon Spaihts", "shape": "dot", "title": "Jon Spaihts"}]);
+                  edges = new vis.DataSet([{"arrows": "to", "from": "Ed Wood", "label": "genre", "title": "genre", "to": "biographical"}, {"arrows": "to", "from": "Ed Wood", "label": "director", "title": "director", "to": "Tim Burton"}, {"arrows": "to", "from": "Ed Wood", "label": "cast member", "title": "cast member", "to": "Johnny Depp"}, {"arrows": "to", "from": "Ed Wood", "label": "cast member", "title": "cast member", "to": "Patricia Arquette"}, {"arrows": "to", "from": "Ed Wood", "label": "cast member", "title": "cast member", "to": "Jeffrey Jones"}, {"arrows": "to", "from": "Ed Wood", "label": "cast member", "title": "cast member", "to": "Lisa Marie"}, {"arrows": "to", "from": "Ed Wood", "label": "cast member", "title": "cast member", "to": "Bill Murray"}, {"arrows": "to", "from": "Ed Wood", "label": "cast member", "title": "cast member", "to": "Sarah Jessica Parker"}, {"arrows": "to", "from": "Ed Wood", "label": "publication date", "title": "publication date", "to": "1994"}, {"arrows": "to", "from": "Ed Wood", "label": "cast", "title": "cast", "to": "Lisa Marie"}, {"arrows": "to", "from": "Ed Wood", "label": "cast member", "title": "cast member", "to": "Bela Lugosi"}, {"arrows": "to", "from": "Ed Wood", "label": "cast member", "title": "cast member", "to": "Martin Landau"}, {"arrows": "to", "from": "Ed Wood", "label": "genre", "title": "genre", "to": "comedy-drama"}, {"arrows": "to", "from": "Ed Wood", "label": "cast member", "title": "cast member", "to": "Lisa"}, {"arrows": "to", "from": "Ed Wood", "label": "genre", "title": "genre", "to": "comedy-drama film"}, {"arrows": "to", "from": "Ed Wood", "label": "cast member", "title": "cast member", "to": "Patric Arquette"}, {"arrows": "to", "from": "Ed Wood", "label": "director", "title": "director", "to": "Johnny Depp"}, {"arrows": "to", "from": "Ed Wood", "label": "genre", "title": "genre", "to": "biographical period"}, {"arrows": "to", "from": "Ed Wood", "label": "cast member", "title": "cast member", "to": "Patty Arquette"}, {"arrows": "to", "from": "Scott Derrickson", "label": "date of birth", "title": "date of birth", "to": "July 16, 1966"}, {"arrows": "to", "from": "Sinister", "label": "director", "title": "director", "to": "Scott Derrickson"}, {"arrows": "to", "from": "The Exorcism of Emily Rose", "label": "director", "title": "director", "to": "Scott Derrickson"}, {"arrows": "to", "from": "Deliver Us From Evil", "label": "director", "title": "director", "to": "Scott Derrickson"}, {"arrows": "to", "from": "Doctor Strange", "label": "director", "title": "director", "to": "Scott Derrickson"}, {"arrows": "to", "from": "Doctor Strange", "label": "part of the series", "title": "part of the series", "to": "Marvel Cinematic Universe"}, {"arrows": "to", "from": "Sinister", "label": "genre", "title": "genre", "to": "horror film"}, {"arrows": "to", "from": "The Exorcism of Emily Rose", "label": "genre", "title": "genre", "to": "horror film"}, {"arrows": "to", "from": "Deliver Us From Evil", "label": "genre", "title": "genre", "to": "horror film"}, {"arrows": "to", "from": "Doctor Strange", "label": "genre", "title": "genre", "to": "horror film"}, {"arrows": "to", "from": "Sinister", "label": "genre", "title": "genre", "to": "horror films"}, {"arrows": "to", "from": "The Exorcism of Emily Rose", "label": "genre", "title": "genre", "to": "horror films"}, {"arrows": "to", "from": "Deliver Us From Evil", "label": "genre", "title": "genre", "to": "horror films"}, {"arrows": "to", "from": "Doctor Strange", "label": "genre", "title": "genre", "to": "horror films"}, {"arrows": "to", "from": "Scott Derrickson", "label": "notable work", "title": "notable work", "to": "Doctor Strange"}, {"arrows": "to", "from": "Scott Derrickson", "label": "notable work", "title": "notable work", "to": "Sinister"}, {"arrows": "to", "from": "Scott Derrickson", "label": "notable work", "title": "notable work", "to": "The Exorcism of Emily Rose"}, {"arrows": "to", "from": "Scott Derrickson", "label": "notable work", "title": "notable work", "to": "Deliver Us From Evil"}, {"arrows": "to", "from": "Scott Derrickson", "label": "genre", "title": "genre", "to": "horror film"}, {"arrows": "to", "from": "Scott Derrickson", "label": "genre", "title": "genre", "to": "horror films"}, {"arrows": "to", "from": "Scott Derrickson", "label": "country of citizenship", "title": "country of citizenship", "to": "American"}, {"arrows": "to", "from": "Sinister", "label": "country of origin", "title": "country of origin", "to": "American"}, {"arrows": "to", "from": "The Exorcism of Emily Rose", "label": "country of origin", "title": "country of origin", "to": "American"}, {"arrows": "to", "from": "Deliver Us From Evil", "label": "country of origin", "title": "country of origin", "to": "American"}, {"arrows": "to", "from": "Doctor Strange", "label": "country of origin", "title": "country of origin", "to": "American"}, {"arrows": "to", "from": "Doctor Strange", "label": "part of the", "title": "part of the", "to": "Marvel Cinematic Universe"}, {"arrows": "to", "from": "Scott Derrickson", "label": "residence", "title": "residence", "to": "Los Angeles"}, {"arrows": "to", "from": "Woodson", "label": "instance of", "title": "instance of", "to": "census-designated place"}, {"arrows": "to", "from": "Woodson", "label": "located in the administrative territorial entity", "title": "located in the administrative territorial entity", "to": "Pulaski County, Arkansas"}, {"arrows": "to", "from": "Woodson", "label": "located in the administrative territorial entity", "title": "located in the administrative territorial entity", "to": "Pulaski County"}, {"arrows": "to", "from": "Pulaski County", "label": "located in the administrative territorial entity", "title": "located in the administrative territorial entity", "to": "Arkansas"}, {"arrows": "to", "from": "Arkansas", "label": "contains administrative territorial entity", "title": "contains administrative territorial entity", "to": "Pulaski County"}, {"arrows": "to", "from": "Woodson", "label": "country", "title": "country", "to": "United States"}, {"arrows": "to", "from": "census-designated place", "label": "country", "title": "country", "to": "United States"}, {"arrows": "to", "from": "Pulaski County", "label": "country", "title": "country", "to": "United States"}, {"arrows": "to", "from": "Arkansas", "label": "country", "title": "country", "to": "United States"}, {"arrows": "to", "from": "United States", "label": "contains administrative territorial entity", "title": "contains administrative territorial entity", "to": "Arkansas"}, {"arrows": "to", "from": "Woodson", "label": "instance of", "title": "instance of", "to": "Pul"}, {"arrows": "to", "from": "Little Rock\u2013North Little Rock\u2013Conway Metropolitan Statistical Area", "label": "located in the administrative territorial entity", "title": "located in the administrative territorial entity", "to": "Arkansas"}, {"arrows": "to", "from": "Pulaski County, Arkansas", "label": "country", "title": "country", "to": "United States"}, {"arrows": "to", "from": "Woodson", "label": "instance of", "title": "instance of", "to": "Pulaski County,"}, {"arrows": "to", "from": "Little Rock\u2013North Little Rock\u2013Conway Metropolitan Statistical Area", "label": "country", "title": "country", "to": "United States"}, {"arrows": "to", "from": "Woodson Lake", "label": "located in the administrative territorial entity", "title": "located in the administrative territorial entity", "to": "Pulaski County"}, {"arrows": "to", "from": "Wood Hollow", "label": "located in the administrative territorial entity", "title": "located in the administrative territorial entity", "to": "Pulaski County"}, {"arrows": "to", "from": "Woodson", "label": "located in the administrative territorial entity", "title": "located in the administrative territorial entity", "to": "Arkansas"}, {"arrows": "to", "from": "Woodson", "label": "located in the administrative territorial entity", "title": "located in the administrative territorial entity", "to": "United"}, {"arrows": "to", "from": "Woodson", "label": "located in the administrative territorial entity", "title": "located in the administrative territorial entity", "to": "United States"}, {"arrows": "to", "from": "Woodson Lake", "label": "located in the administrative territorial entity", "title": "located in the administrative territorial entity", "to": "Pulaski County, Arkansas"}, {"arrows": "to", "from": "Dawn of the Dead", "label": "composer", "title": "composer", "to": "Tyler Bates"}, {"arrows": "to", "from": "Dawn of the Dead", "label": "genre", "title": "genre", "to": "horror film"}, {"arrows": "to", "from": "300", "label": "composer", "title": "composer", "to": "Tyler Bates"}, {"arrows": "to", "from": "300", "label": "genre", "title": "genre", "to": "horror film"}, {"arrows": "to", "from": "Sucker Punch", "label": "composer", "title": "composer", "to": "Tyler Bates"}, {"arrows": "to", "from": "Sucker Punch", "label": "genre", "title": "genre", "to": "horror film"}, {"arrows": "to", "from": "John Wick", "label": "composer", "title": "composer", "to": "Tyler Bates"}, {"arrows": "to", "from": "John Wick", "label": "genre", "title": "genre", "to": "horror film"}, {"arrows": "to", "from": "Guardians of the Galaxy", "label": "composer", "title": "composer", "to": "Tyler Bates"}, {"arrows": "to", "from": "Guardians of the Galaxy", "label": "followed by", "title": "followed by", "to": "2017 sequel"}, {"arrows": "to", "from": "2017 sequel", "label": "follows", "title": "follows", "to": "Guardians of the Galaxy"}, {"arrows": "to", "from": "Tyler Bates", "label": "date of birth", "title": "date of birth", "to": "June 5, 1965"}, {"arrows": "to", "from": "The Pale Emperor", "label": "producer", "title": "producer", "to": "Tyler Bates"}, {"arrows": "to", "from": "The Pale Emperor", "label": "performer", "title": "performer", "to": "Marilyn Manson"}, {"arrows": "to", "from": "Heaven Upside Down", "label": "producer", "title": "producer", "to": "Tyler Bates"}, {"arrows": "to", "from": "Guardians of the Galaxy", "label": "followed by", "title": "followed by", "to": "its 2017 sequel"}, {"arrows": "to", "from": "its 2017 sequel", "label": "follows", "title": "follows", "to": "Guardians of the Galaxy"}, {"arrows": "to", "from": "its 2017 sequel", "label": "composer", "title": "composer", "to": "Tyler Bates"}, {"arrows": "to", "from": "Heaven Upside Down", "label": "performer", "title": "performer", "to": "Marilyn Manson"}, {"arrows": "to", "from": "2017 sequel", "label": "composer", "title": "composer", "to": "Tyler Bates"}, {"arrows": "to", "from": "Dawn of the Dead", "label": "genre", "title": "genre", "to": "action"}, {"arrows": "to", "from": "300", "label": "genre", "title": "genre", "to": "action"}, {"arrows": "to", "from": "Sucker Punch", "label": "genre", "title": "genre", "to": "action"}, {"arrows": "to", "from": "John Wick", "label": "genre", "title": "genre", "to": "action"}, {"arrows": "to", "from": "2017 sequel", "label": "composer", "title": "composer", "to": "Guardians of the Galaxy"}, {"arrows": "to", "from": "Edward Davis Wood Jr.", "label": "date of birth", "title": "date of birth", "to": "October 10, 1924"}, {"arrows": "to", "from": "Edward Davis Wood Jr.", "label": "date of death", "title": "date of death", "to": "December 10, 1978"}, {"arrows": "to", "from": "Davis Wood Jr.", "label": "date of birth", "title": "date of birth", "to": "October 10, 1924"}, {"arrows": "to", "from": "Davis Wood Jr.", "label": "date of death", "title": "date of death", "to": "December 10, 1978"}, {"arrows": "to", "from": "Davis Wood", "label": "date of birth", "title": "date of birth", "to": "October 10, 1924"}, {"arrows": "to", "from": "Davis Wood", "label": "date of death", "title": "date of death", "to": "December 10, 1978"}, {"arrows": "to", "from": "filmmaker", "label": "practiced by", "title": "practiced by", "to": "producer"}, {"arrows": "to", "from": "producer", "label": "field of this occupation", "title": "field of this occupation", "to": "filmmaker"}, {"arrows": "to", "from": "Edward Davis Wood", "label": "date of birth", "title": "date of birth", "to": "October 10, 1924"}, {"arrows": "to", "from": "Edward Davis Wood", "label": "date of death", "title": "date of death", "to": "December 10, 1978"}, {"arrows": "to", "from": "Edward Davis Wood Jr.", "label": "country of citizenship", "title": "country of citizenship", "to": "American"}, {"arrows": "to", "from": "Davis Wood Jr.", "label": "country of citizenship", "title": "country of citizenship", "to": "American"}, {"arrows": "to", "from": "Edward Davis Wood Jr", "label": "date of birth", "title": "date of birth", "to": "October 10, 1924"}, {"arrows": "to", "from": "Edward Davis Wood Jr", "label": "date of death", "title": "date of death", "to": "December 10, 1978"}, {"arrows": "to", "from": "Davis Wood Jr", "label": "date of birth", "title": "date of birth", "to": "October 10, 1924"}, {"arrows": "to", "from": "Davis Wood Jr", "label": "date of death", "title": "date of death", "to": "December 10, 1978"}, {"arrows": "to", "from": "Davis Wood", "label": "country of citizenship", "title": "country of citizenship", "to": "American"}, {"arrows": "to", "from": "filmmaker", "label": "practiced by", "title": "practiced by", "to": "director"}, {"arrows": "to", "from": "director", "label": "field of this occupation", "title": "field of this occupation", "to": "filmmaker"}, {"arrows": "to", "from": "David Wood Jr.", "label": "date of birth", "title": "date of birth", "to": "October 10, 1924"}, {"arrows": "to", "from": "David Wood Jr.", "label": "date of death", "title": "date of death", "to": "December 10, 1978"}, {"arrows": "to", "from": "Deliver Us from Evil", "label": "publication date", "title": "publication date", "to": "2014"}, {"arrows": "to", "from": "Deliver Us from Evil", "label": "director", "title": "director", "to": "Scott Derrickson"}, {"arrows": "to", "from": "Deliver Us from Evil", "label": "producer", "title": "producer", "to": "Jerry Bruckheimer"}, {"arrows": "to", "from": "Deliver Us from Evil", "label": "cast member", "title": "cast member", "to": "Eric Bana"}, {"arrows": "to", "from": "Deliver Us from Evil", "label": "cast member", "title": "cast member", "to": "\u00c9dgar Ram\u00edrez"}, {"arrows": "to", "from": "Deliver Us from Evil", "label": "cast member", "title": "cast member", "to": "Sean Harris"}, {"arrows": "to", "from": "Deliver Us from Evil", "label": "cast member", "title": "cast member", "to": "Olivia Munn"}, {"arrows": "to", "from": "Deliver Us from Evil", "label": "cast member", "title": "cast member", "to": "Joel McHale"}, {"arrows": "to", "from": "Deliver Us from Evil", "label": "publication date", "title": "publication date", "to": "July 2, 2014"}, {"arrows": "to", "from": "Deliver Us from Evil", "label": "genre", "title": "genre", "to": "horror film"}, {"arrows": "to", "from": "Deliver Us from Evil", "label": "genre", "title": "genre", "to": "supernatural horror film"}, {"arrows": "to", "from": "Beware the Night", "label": "publication date", "title": "publication date", "to": "2001"}, {"arrows": "to", "from": "Beware the Night", "label": "author", "title": "author", "to": "Ralph Sarchie"}, {"arrows": "to", "from": "Beware the Night", "label": "author", "title": "author", "to": "Lisa Collier Cool"}, {"arrows": "to", "from": "Deliver Us from Evil", "label": "genre", "title": "genre", "to": "supernatural horror"}, {"arrows": "to", "from": "Deliver Us from Evil", "label": "after a work by", "title": "after a work by", "to": "Ralph Sarchie"}, {"arrows": "to", "from": "Deliver Us from Evil", "label": "after a work by", "title": "after a work by", "to": "Lisa Collier Cool"}, {"arrows": "to", "from": "Deliver Us from Evil", "label": "genre", "title": "genre", "to": "supernatural"}, {"arrows": "to", "from": "Deliver Us from Evil", "label": "screenwriter", "title": "screenwriter", "to": "Ralph Sarchie"}, {"arrows": "to", "from": "Deliver Us from Evil", "label": "screenwriter", "title": "screenwriter", "to": "Lisa Collier Cool"}, {"arrows": "to", "from": "Adam Collis", "label": "educated at", "title": "educated at", "to": "Duke University"}, {"arrows": "to", "from": "Adam Collis", "label": "educated at", "title": "educated at", "to": "University of California, Los Angeles"}, {"arrows": "to", "from": "Love in the Ruins", "label": "director", "title": "director", "to": "Scott Derrickson"}, {"arrows": "to", "from": "Hundred Percent", "label": "director", "title": "director", "to": "Eric Koyanagi"}, {"arrows": "to", "from": "Hundred Percent", "label": "publication date", "title": "publication date", "to": "1998"}, {"arrows": "to", "from": "Love in the Ruins", "label": "director", "title": "director", "to": "Adam Collis"}, {"arrows": "to", "from": "Adam Collis", "label": "educated at", "title": "educated at", "to": "University of Southern California"}, {"arrows": "to", "from": "Love in the Ruins", "label": "cast member", "title": "cast member", "to": "Adam Collis"}, {"arrows": "to", "from": "Hundred Percent", "label": "cast member", "title": "cast member", "to": "Adam Collis"}, {"arrows": "to", "from": "Sinister", "label": "publication date", "title": "publication date", "to": "2012"}, {"arrows": "to", "from": "Sinister", "label": "cast member", "title": "cast member", "to": "Ethan Hawke"}, {"arrows": "to", "from": "Sinister", "label": "genre", "title": "genre", "to": "supernatural horror film"}, {"arrows": "to", "from": "Sinister", "label": "genre", "title": "genre", "to": "supernatural horror"}, {"arrows": "to", "from": "Sinister", "label": "genre", "title": "genre", "to": "supernatural"}, {"arrows": "to", "from": "supernatural", "label": "has part", "title": "has part", "to": "horror film"}, {"arrows": "to", "from": "horror film", "label": "subclass of", "title": "subclass of", "to": "supernatural"}, {"arrows": "to", "from": "Sinister", "label": "main subject", "title": "main subject", "to": "true-crime"}, {"arrows": "to", "from": "Sinister", "label": "screenwriter", "title": "screenwriter", "to": "C. Robert Cargill"}, {"arrows": "to", "from": "Sinister", "label": "genre", "title": "genre", "to": "true-crime"}, {"arrows": "to", "from": "Sinister", "label": "screenwriter", "title": "screenwriter", "to": "Robert Cargill"}, {"arrows": "to", "from": "Ethan Hawke", "label": "genre", "title": "genre", "to": "horror film"}, {"arrows": "to", "from": "Sinister", "label": "genre", "title": "genre", "to": "horror"}, {"arrows": "to", "from": "Sinister", "label": "main subject", "title": "main subject", "to": "supernatural"}, {"arrows": "to", "from": "Conrad Brooks", "label": "date of birth", "title": "date of birth", "to": "January 3, 1931"}, {"arrows": "to", "from": "Conrad Brooks", "label": "place of birth", "title": "place of birth", "to": "Baltimore, Maryland"}, {"arrows": "to", "from": "Plan 9 from Outer Space", "label": "cast member", "title": "cast member", "to": "Conrad Brooks"}, {"arrows": "to", "from": "Glen or Glenda", "label": "cast member", "title": "cast member", "to": "Conrad Brooks"}, {"arrows": "to", "from": "Jail Bait", "label": "cast member", "title": "cast member", "to": "Conrad Brooks"}, {"arrows": "to", "from": "Conrad Brooks", "label": "place of birth", "title": "place of birth", "to": "Baltimore"}, {"arrows": "to", "from": "Baltimore", "label": "located in the administrative territorial entity", "title": "located in the administrative territorial entity", "to": "Maryland"}, {"arrows": "to", "from": "Maryland", "label": "contains administrative territorial entity", "title": "contains administrative territorial entity", "to": "Baltimore"}, {"arrows": "to", "from": "Conrad Brooks", "label": "work period (start)", "title": "work period (start)", "to": "1948"}, {"arrows": "to", "from": "Plan 9 from Outer Space", "label": "cast member", "title": "cast member", "to": "Ed Wood"}, {"arrows": "to", "from": "Glen or Glenda", "label": "cast member", "title": "cast member", "to": "Ed Wood"}, {"arrows": "to", "from": "Jail Bait", "label": "cast member", "title": "cast member", "to": "Ed Wood"}, {"arrows": "to", "from": "Doctor Strange", "label": "genre", "title": "genre", "to": "superhero film"}, {"arrows": "to", "from": "Doctor Strange", "label": "cast member", "title": "cast member", "to": "Benedict Cumberbatch"}, {"arrows": "to", "from": "Doctor Strange", "label": "cast member", "title": "cast member", "to": "Chiwetel Ejiofor"}, {"arrows": "to", "from": "Doctor Strange", "label": "cast member", "title": "cast member", "to": "Rachel McAdams"}, {"arrows": "to", "from": "Doctor Strange", "label": "cast member", "title": "cast member", "to": "Benedict Wong"}, {"arrows": "to", "from": "Doctor Strange", "label": "cast member", "title": "cast member", "to": "Michael Stuhlbarg"}, {"arrows": "to", "from": "Doctor Strange", "label": "cast member", "title": "cast member", "to": "Benjamin Bratt"}, {"arrows": "to", "from": "Doctor Strange", "label": "cast member", "title": "cast member", "to": "Scott Adkins"}, {"arrows": "to", "from": "Doctor Strange", "label": "cast member", "title": "cast member", "to": "Mads Mikkelsen"}, {"arrows": "to", "from": "Doctor Strange", "label": "cast member", "title": "cast member", "to": "Tilda Swinton"}, {"arrows": "to", "from": "Doctor Strange", "label": "cast member", "title": "cast member", "to": "Chiwetel"}, {"arrows": "to", "from": "Stephen Strange", "label": "present in work", "title": "present in work", "to": "Doctor Strange"}, {"arrows": "to", "from": "Stephen Strange", "label": "performer", "title": "performer", "to": "Benedict Cumberbatch"}, {"arrows": "to", "from": "Stephen Strange", "label": "performer", "title": "performer", "to": "Doctor Strange"}, {"arrows": "to", "from": "Doctor Strange", "label": "cast member", "title": "cast member", "to": "Rachel"}, {"arrows": "to", "from": "Doctor Strange", "label": "based on", "title": "based on", "to": "Marvel Comics"}, {"arrows": "to", "from": "Doctor Strange", "label": "based", "title": "based", "to": "Marvel Comics"}, {"arrows": "to", "from": "character of the same name", "label": "present in work", "title": "present in work", "to": "Doctor Strange"}, {"arrows": "to", "from": "Doctor Strange", "label": "based on", "title": "based on", "to": "character of the same name"}, {"arrows": "to", "from": "Doctor Strange", "label": "production company", "title": "production company", "to": "Marvel Studios"}, {"arrows": "to", "from": "Benedict Cumberbatch", "label": "notable work", "title": "notable work", "to": "Doctor Strange"}, {"arrows": "to", "from": "Stephen Strange", "label": "present in", "title": "present in", "to": "Doctor Strange"}, {"arrows": "to", "from": "Stephen Strange", "label": "present in work", "title": "present in work", "to": "Benedict Cumberbatch"}, {"arrows": "to", "from": "Doctor Strange", "label": "distributed by", "title": "distributed by", "to": "Walt Disney Studios Motion Pictures"}, {"arrows": "to", "from": "Doctor Strange", "label": "production company", "title": "production company", "to": "Walt Disney Studios Motion Pictures"}, {"arrows": "to", "from": "Doctor Strange", "label": "genre", "title": "genre", "to": "Benedict"}, {"arrows": "to", "from": "character of the same name", "label": "derivative work", "title": "derivative work", "to": "Doctor Strange"}, {"arrows": "to", "from": "Doctor Strange", "label": "genre", "title": "genre", "to": "Benedict Cumber"}, {"arrows": "to", "from": "Doctor Strange", "label": "screenwriter", "title": "screenwriter", "to": "Jon Spaihts"}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": true,
+        "filter": [
+            "physics"
+        ]
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "hierarchicalRepulsion": {
+            "centralGravity": 0.0,
+            "damping": 0.09,
+            "nodeDistance": 200,
+            "springConstant": 0.01,
+            "springLength": 100
+        },
+        "repulsion": {
+            "centralGravity": 0.2,
+            "damping": 0.1,
+            "nodeDistance": 200,
+            "springConstant": 0.05,
+            "springLength": 150
+        },
+        "solver": "hierarchicalRepulsion",
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+                  // if this network requires displaying the configure window,
+                  // put it in its div
+                  options.configure["container"] = document.getElementById("config");
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+                      network.on("stabilizationProgress", function(params) {
+                          document.getElementById('loadingBar').removeAttribute("style");
+                          var maxWidth = 496;
+                          var minWidth = 20;
+                          var widthFactor = params.iterations/params.total;
+                          var width = Math.max(minWidth,maxWidth * widthFactor);
+                          document.getElementById('bar').style.width = width + 'px';
+                          document.getElementById('text').innerHTML = Math.round(widthFactor*100) + '%';
+                      });
+                      network.once("stabilizationIterationsDone", function() {
+                          document.getElementById('text').innerHTML = '100%';
+                          document.getElementById('bar').style.width = '496px';
+                          document.getElementById('loadingBar').style.opacity = 0;
+                          // really clean the dom element
+                          setTimeout(function () {document.getElementById('loadingBar').style.display = 'none';}, 500);
+                      });
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

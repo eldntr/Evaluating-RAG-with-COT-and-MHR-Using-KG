@@ -1,71 +1,46 @@
-from rank_bm25 import BM25Okapi
-from langchain_community.vectorstores import FAISS
-from langchain_core.retrievers import BaseRetriever
-from typing import List, Optional
-from langchain_core.documents import Document
-from pydantic import BaseModel, Field
+import numpy as np
+import faiss
+from sentence_transformers import SentenceTransformer, CrossEncoder
 
-class HybridRetriever(BaseRetriever, BaseModel):
-    vectorstore: FAISS = Field(...)  # FAISS index
-    documents: List[Document] = Field(...)  # Dokumen untuk BM25
-    k: int = 4  # Jumlah dokumen untuk diambil
-    bm25: Optional[BM25Okapi] = None  # Model BM25 opsional
+def save_embeddings_and_index(corpus_embeddings, index, documents, embeddings_path, index_path, documents_path):
+    np.save(embeddings_path, corpus_embeddings)
+    faiss.write_index(index, index_path)
+    np.save(documents_path, np.array(documents, dtype=object))
 
-    model_config = {
-        "arbitrary_types_allowed": True  # Izinkan tipe non-standar seperti FAISS dan BM25
-    }
+def load_embeddings_and_index(embeddings_path, index_path, documents_path):
+    corpus_embeddings = np.load(embeddings_path)
+    index = faiss.read_index(index_path)
+    documents = np.load(documents_path, allow_pickle=True).tolist()
+    return corpus_embeddings, index, documents
 
-    def __init__(self, vectorstore: FAISS, documents: List[Document], k: int = 2):
-        super().__init__(vectorstore=vectorstore, documents=documents, k=k, bm25=None)
+def build_retriever(documents, model_name="sentence-transformers/multi-qa-mpnet-base-dot-v1", embeddings_path="corpus_embeddings.npy", index_path="faiss_index.index", documents_path="documents.npy"):
 
-        if documents and all(hasattr(doc, "page_content") and isinstance(doc.page_content, str) for doc in documents):
-            tokenized_corpus = [doc.page_content.split() for doc in documents]
-            if tokenized_corpus:  # Pastikan dokumen tidak kosong
-                object.__setattr__(self, "bm25", BM25Okapi(tokenized_corpus))
-            else:
-                print("⚠️  BM25 tidak dapat dibuat karena dokumen kosong.")
-                object.__setattr__(self, "bm25", None)
-        else:
-            print("⚠️  BM25 tidak dapat dibuat karena dokumen tidak valid.")
-            object.__setattr__(self, "bm25", None)
+    model = SentenceTransformer(model_name)
+    corpus_embeddings = model.encode([doc["text"] for doc in documents], convert_to_tensor=False)
+    corpus_embeddings = np.array(corpus_embeddings).astype('float32')
 
-    def get_relevant_documents(self, query: str) -> List[Document]:
-        """ Hybrid Retrieval dengan FAISS + BM25 dan bobot yang lebih seimbang """
-        if not self.documents:
-            print("⚠️  Tidak ada dokumen yang tersedia untuk retrieval!")
-            return []
+    index = faiss.IndexFlatL2(corpus_embeddings.shape[1])
+    index.add(corpus_embeddings)
 
-        # FAISS Semantic Search
-        faiss_weight = 1  # Bobot untuk FAISS
-        bm25_weight = 0  # Bobot untuk BM25
-        k_faiss = int(self.k * faiss_weight)
-        k_bm25 = self.k - k_faiss  # Sisa kuota untuk BM25
+    # save_embeddings_and_index(corpus_embeddings, index, documents, embeddings_path, index_path, documents_path)
+    return model, index, documents
 
-        faiss_results = self.vectorstore.similarity_search(query, k=k_faiss)
+def search(query, model, index, documents, reranker_model="cross-encoder/ms-marco-MiniLM-L-12-v2", k=5):
 
-        # BM25 Keyword Search
-        if self.bm25:
-            bm25_scores = self.bm25.get_scores(query.split())
-            bm25_indices = sorted(range(len(bm25_scores)), key=lambda i: bm25_scores[i], reverse=True)[:k_bm25]
-            bm25_results = [self.documents[i] for i in bm25_indices]
+    query_embedding = model.encode(query, convert_to_tensor=False)
+    query_embedding = np.array([query_embedding]).astype('float32')
 
-            print(f"✅ FAISS retrieved {len(faiss_results)} documents, BM25 retrieved {len(bm25_results)} documents.")
+    distances, indices = index.search(query_embedding, k * 2)
+    initial_results = [{"document": documents[idx]["text"], "distance": distances[0][i]} for i, idx in enumerate(indices[0])]
 
-            # Gabungkan hasil dan hilangkan duplikasi
-            unique_results = {}
-            for doc in (faiss_results + bm25_results):
-                unique_results[doc.page_content] = doc
+    reranker = CrossEncoder(reranker_model)
+    pairs = [(query, result["document"]) for result in initial_results]
+    rerank_scores = reranker.predict(pairs)
 
-            return list(unique_results.values())[:self.k]  # Ambil hanya k dokumen unik
+    reranked_results = [
+        {"document": initial_results[i]["document"], "rerank_score": score, "distance": initial_results[i]["distance"]}
+        for i, score in enumerate(rerank_scores)
+    ]
 
-        else:
-            print("⚠️  BM25 tidak tersedia, hanya menggunakan FAISS.")
-            return faiss_results
-
-    def retrieve(self, query: str) -> List[Document]:
-        """ Wrapper untuk get_relevant_documents() agar kompatibel dengan LangChain """
-        return self.invoke(query)
-
-def get_hybrid_retriever(vectorstore, documents):
-    """ Mengembalikan hybrid retriever """
-    return HybridRetriever(vectorstore=vectorstore, documents=documents)
+    reranked_results.sort(key=lambda x: x["rerank_score"], reverse=True)
+    return reranked_results[:k]

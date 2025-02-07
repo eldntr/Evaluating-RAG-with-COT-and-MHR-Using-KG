@@ -1,0 +1,112 @@
+Question,Actual Answer,Generated Answer,Entities Extracted,Knowledge Graph Info,ROUGE-L F1 Score,Semantic Similarity,Keyword-Based Score,Generation Time (seconds)
+Were Scott Derrickson and Ed Wood of the same nationality?,yes,"No, Scott Derrickson is American, while there is no information provided about Ed Wood's nationality.","['same nationality', 'nationality', 'Scott Derrickson', 'Ed Wood', 'the same nationality']","Scott Derrickson:
+- date of birth: July 16, 1966
+- notable work: Doctor Strange
+- notable work: Sinister
+- notable work: The Exorcism of Emily Rose
+- notable work: Deliver Us From Evil
+- genre: horror film
+- genre: horror films
+- country of citizenship: American
+- residence: Los Angeles
+Doctor Strange:
+- director: Scott Derrickson
+- part of the series: Marvel Cinematic Universe
+- genre: horror film
+- genre: horror films
+- country of origin: American
+- part of the: Marvel Cinematic Universe
+- genre: superhero film
+- cast member: Benedict Cumberbatch
+- cast member: Chiwetel Ejiofor
+- cast member: Rachel McAdams
+- cast member: Benedict Wong
+- cast member: Michael Stuhlbarg
+- cast member: Benjamin Bratt
+- cast member: Scott Adkins
+- cast member: Mads Mikkelsen
+- cast member: Tilda Swinton
+- cast member: Chiwetel
+- cast member: Rachel
+- based on: Marvel Comics
+- based: Marvel Comics
+- based on: character of the same name
+- production company: Marvel Studios
+- distributed by: Walt Disney Studios Motion Pictures
+- production company: Walt Disney Studios Motion Pictures
+- genre: Benedict
+- genre: Benedict Cumber
+- screenwriter: Jon Spaihts
+Sinister:
+- director: Scott Derrickson
+- genre: horror film
+- genre: horror films
+- country of origin: American
+- publication date: 2012
+- cast member: Ethan Hawke
+- genre: supernatural horror film
+- genre: supernatural horror
+- genre: supernatural
+- main subject: true-crime
+- screenwriter: C. Robert Cargill
+- genre: true-crime
+- screenwriter: Robert Cargill
+- genre: horror
+- main subject: supernatural
+The Exorcism of Emily Rose:
+- director: Scott Derrickson
+- genre: horror film
+- genre: horror films
+- country of origin: American
+Deliver Us From Evil:
+- director: Scott Derrickson
+- genre: horror film
+- genre: horror films
+- country of origin: American
+horror film:
+- subclass of: supernatural
+Benedict Cumberbatch:
+- notable work: Doctor Strange
+character of the same name:
+- present in work: Doctor Strange
+- derivative work: Doctor Strange
+Ethan Hawke:
+- genre: horror film
+supernatural:
+- has part: horror film
+Ed Wood:
+- genre: biographical
+- director: Tim Burton
+- cast member: Johnny Depp
+- cast member: Patricia Arquette
+- cast member: Jeffrey Jones
+- cast member: Lisa Marie
+- cast member: Bill Murray
+- cast member: Sarah Jessica Parker
+- publication date: 1994
+- cast: Lisa Marie
+- cast member: Bela Lugosi
+- cast member: Martin Landau
+- genre: comedy-drama
+- cast member: Lisa
+- genre: comedy-drama film
+- cast member: Patric Arquette
+- director: Johnny Depp
+- genre: biographical period
+- cast member: Patty Arquette",0.0,0.11625830829143524,0.0,5.895949840545654
+What government position was held by the woman who portrayed Corliss Archer in the film Kiss and Tell?,Chief of Protocol,Shirley Temple Black held the position of U.S. Ambassador to Ghana and Czechoslovakia.,"['Corliss Archer', 'Kiss and Tell']",,0.11764705591695508,0.1865212768316269,0.3333333333333333,5.363471984863281
+"What science fantasy young adult series, told in first person, has a set of companion books narrating the stories of enslaved worlds and alien species?",Animorphs,"The science fantasy young adult series that fits this description is **""The Illuminae Files""**","['young adult series', 'companion books', 'young adult', 'science fantasy', 'series']",,0.0,0.196988046169281,0.0,3.5191361904144287
+Are the Laleli Mosque and Esma Sultan Mansion located in the same neighborhood?,no,"No, the Laleli Mosque and Esma Sultan Mansion are not located in the same neighborhood. The Laleli Mosque is in the Laleli neighborhood, while the Esma Sultan Mansion is in the Beyoğlu neighborhood.","['Laleli Mosque', 'Esma Sultan Mansion']",,0.0,0.07626191526651382,1.0,3.4826226234436035
+"The director of the romantic comedy ""Big Stone Gap"" is based in what New York city?","Greenwich Village, New York City","The director of the romantic comedy ""Big Stone Gap"" is based in New York City.","['""Big Stone Gap""', 'New York', 'New York city', 'romantic comedy', 'Big Stone Gap']",,0.29999999625,0.33763018250465393,0.6,4.033646583557129
+2014 S/S is the debut album of a South Korean boy group that was formed by who?,YG Entertainment,The 2014 S/S is the debut album of a South Korean boy group that was formed by SM Entertainment.,"['2014 S/S', 'debut album', 'South Korea', 'album', 'boy group']",,0.09523809351473926,0.3160417079925537,0.5,3.5839478969573975
+Who was known by his stage name Aladin and helped organizations improve their performance as a consultant?,Eenasul Fateh,Aladin,"['Aladin', 'performance', 'consultant', 'organization', 'performance as a consultant']",,0.0,0.18532444536685944,0.0,2.617532730102539
+The arena where the Lewiston Maineiacs played their home games can seat how many people?,"3,677 seated","The arena where the Lewiston Maineiacs played their home games, the Androscoggin Bank Colisee, can seat 3,000 people.","['home games', 'arena', 'Lewiston', 'Maineiacs', 'Lewiston Maineiacs', 'arena where the Lewiston Maineiacs played their home games']",,0.0,0.17293865978717804,0.0,5.8770365715026855
+"Who is older, Annie Morton or Terry Richardson?",Terry Richardson,"To determine who is older between Annie Morton and Terry Richardson, we need to know their birthdates. However, the provided information does not include this detail. Therefore, I cannot determine who is older.","['Annie Morton', 'Terry Richardson']",,0.06451612782518212,0.4336709976196289,1.0,4.680220603942871
+Are Local H and For Against both from the United States?,yes,"The information provided in the Knowledge Graph does not include any details about ""Local H"" or ""For Against."" Therefore, it is not possible to determine if they are from the United States based on the given information.","['United States', 'For Against', 'Local H']","United States:
+- contains administrative territorial entity: Arkansas
+Arkansas:
+- contains administrative territorial entity: Pulaski County
+- country: United States
+Pulaski County:
+- located in the administrative territorial entity: Arkansas
+- country: United States",0.0,0.11292943358421326,0.0,4.055825233459473
