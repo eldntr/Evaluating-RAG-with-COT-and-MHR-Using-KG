@@ -3,10 +3,10 @@ import csv  # Tambahkan impor modul csv
 from rouge import Rouge
 from sentence_transformers import SentenceTransformer, util
 from src.generation import generate_answer  
-from src.retriever import search  
 from tqdm import tqdm  # Tambahkan impor pustaka tqdm
 from src.entity_extraction import extract_entities
 from src.knowledge_graph import collect_kg_info, format_kg
+from src.retriever import search_hybrid
 
 semantic_model = SentenceTransformer("all-MiniLM-L6-v2")
 
@@ -34,19 +34,19 @@ def save_evaluation_results_to_csv(results, csv_path):
         dict_writer.writeheader()
         dict_writer.writerows(results)
 
-def evaluate_model(qa_dataset, embedding_model, generation_model, index, documents, api_key):
+def evaluate_model(qa_dataset, embedding_model, generation_model, index, bm25, documents, api_key):
     results = []
     for qa_entry in tqdm(qa_dataset, desc="Evaluating"):  # Bungkus iterasi dengan tqdm
         question = qa_entry["question"]
         reference_answer = qa_entry["answer"]
         start_time = time.time()  
-        generated_answer = generate_answer(question, embedding_model, generation_model, index, documents, api_key, prompt_type="cot")
+        generated_answer = generate_answer(question, embedding_model, generation_model, index, bm25, documents, api_key, prompt_type="cot")
         end_time = time.time() 
         generation_time = end_time - start_time  
         rouge_score = calculate_rouge_score(generated_answer, reference_answer)
         semantic_score = calculate_semantic_similarity(generated_answer, reference_answer)
         keyword_score = calculate_keyword_score(generated_answer, reference_answer)
-        retrieved_docs = search(question, embedding_model, index, documents)  
+        retrieved_docs = search_hybrid(question, embedding_model, index, bm25, documents)  
         results.append({
             "Question": question,
             "Actual Answer": reference_answer,

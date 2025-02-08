@@ -1,7 +1,7 @@
 import requests
 import json
 import re
-from src.retriever import search  # Import the search function
+from src.retriever import search_hybrid  # Import the search function
 
 DEFAULT_PROMPT = """
 Answer the following question directly and concisely. Ensure the answer is grammatically correct and relevant to the question.
@@ -36,11 +36,11 @@ Use the information provided in the Knowledge Graph to answer the question. Focu
 **Question**: {question}
 """
 
-def generate_answer(question, embedding_model=None, generation_model="mistralai/mistral-small-24b-instruct-2501", index=None, documents=None, api_key=None, kg_info=None, prompt_type="default"):
+def generate_answer(question, embedding_model=None, generation_model="mistralai/mistral-small-24b-instruct-2501", index=None, bm25=None, documents=None, api_key=None, kg_info=None, prompt_type="default"):
     if prompt_type == "cot":
         if embedding_model is None or index is None or documents is None:
             raise ValueError("Embedding model, index, and documents are required for CoT prompt.")
-        results = search(question, embedding_model, index, documents)
+        results = search_hybrid(question, embedding_model, index, bm25, documents)
         retrieved_docs = [doc["document"] for doc in results[:5]]
         context = "\n".join(retrieved_docs)
         formatted_prompt = COT_PROMPT.format(question=question, context=context)
@@ -75,7 +75,8 @@ def generate_answer(question, embedding_model=None, generation_model="mistralai/
         api_response = response.json()
         generated_text = api_response["choices"][0]["message"]["content"]
         match = re.search(r"(?<=\*\*Answer for This Question\*\*:)\s*(.*?)(\n\n|\Z)", generated_text, re.DOTALL) if prompt_type == "cot" else re.search(r"(?<=\*\*Answer\*\*:)\s*(.*?)(\n\n|\Z)", generated_text, re.DOTALL)
-        return match.group(1).strip() if match else generated_text.strip()
+        # return match.group(1).strip() if match else generated_text.strip()
+        return generated_text
     except requests.exceptions.RequestException as e:
         print(f"API Error: {e}")
         return "Maaf, terjadi kesalahan saat menghubungi API."

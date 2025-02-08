@@ -1,5 +1,5 @@
 Question,Actual Answer,Generated Answer,Entities Extracted,Knowledge Graph Info,ROUGE-L F1 Score,Semantic Similarity,Keyword-Based Score,Generation Time (seconds)
-Were Scott Derrickson and Ed Wood of the same nationality?,yes,"No, Scott Derrickson is American, while there is no information provided about Ed Wood's nationality.","['same nationality', 'nationality', 'Scott Derrickson', 'Ed Wood', 'the same nationality']","Scott Derrickson:
+Were Scott Derrickson and Ed Wood of the same nationality?,yes,"No, Scott Derrickson is American, while Ed Wood is not listed as American.","['Scott Derrickson', 'same nationality', 'Ed Wood', 'nationality', 'the same nationality']","Scott Derrickson:
 - date of birth: July 16, 1966
 - notable work: Doctor Strange
 - notable work: Sinister
@@ -65,6 +65,11 @@ Deliver Us From Evil:
 - country of origin: American
 horror film:
 - subclass of: supernatural
+American:
+- contains administrative territorial entity: Pennsylvania
+Los Angeles:
+- country: American
+- twinned administrative body: New York City
 Benedict Cumberbatch:
 - notable work: Doctor Strange
 character of the same name:
@@ -74,6 +79,38 @@ Ethan Hawke:
 - genre: horror film
 supernatural:
 - has part: horror film
+Pennsylvania:
+- shares border with: New York City
+- located in the administrative territorial entity: American
+- country: American
+New York City:
+- country: United States
+- owner of: Jacob K. Javits Convention Center
+- shares border with: Pennsylvania
+- twinned administrative body: Los Angeles
+United States:
+- contains administrative territorial entity: Arkansas
+- diplomatic relation: Ghana
+- diplomatic relation: Czechoslovakia
+- diplomatic relation: United States
+- contains administrative territorial entity: New Jersey
+- capital: New York City
+- contains administrative territorial entity: Minnesota
+- office held by head of government: President
+- contains administrative territorial entity: Maine
+- contains administrative territorial entity: New York
+- contains administrative territorial entity: California
+- contains administrative territorial entity: Mendocino County, California
+- contains administrative territorial entity: Mendocino County
+- contains administrative territorial entity: Idaho
+- contains administrative territorial entity: Oregon
+- contains administrative territorial entity: Utah
+- contains administrative territorial entity: Massachusetts
+- contains administrative territorial entity: Nebraska
+Jacob K. Javits Convention Center:
+- owned by: New York City
+- location: New York City
+- located in the administrative territorial entity: New York City
 Ed Wood:
 - genre: biographical
 - director: Tim Burton
@@ -93,20 +130,2015 @@ Ed Wood:
 - cast member: Patric Arquette
 - director: Johnny Depp
 - genre: biographical period
-- cast member: Patty Arquette",0.0,0.11625830829143524,0.0,5.895949840545654
-What government position was held by the woman who portrayed Corliss Archer in the film Kiss and Tell?,Chief of Protocol,Shirley Temple Black held the position of U.S. Ambassador to Ghana and Czechoslovakia.,"['Corliss Archer', 'Kiss and Tell']",,0.11764705591695508,0.1865212768316269,0.3333333333333333,5.363471984863281
-"What science fantasy young adult series, told in first person, has a set of companion books narrating the stories of enslaved worlds and alien species?",Animorphs,"The science fantasy young adult series that fits this description is **""The Illuminae Files""**","['young adult series', 'companion books', 'young adult', 'science fantasy', 'series']",,0.0,0.196988046169281,0.0,3.5191361904144287
-Are the Laleli Mosque and Esma Sultan Mansion located in the same neighborhood?,no,"No, the Laleli Mosque and Esma Sultan Mansion are not located in the same neighborhood. The Laleli Mosque is in the Laleli neighborhood, while the Esma Sultan Mansion is in the Beyoğlu neighborhood.","['Laleli Mosque', 'Esma Sultan Mansion']",,0.0,0.07626191526651382,1.0,3.4826226234436035
-"The director of the romantic comedy ""Big Stone Gap"" is based in what New York city?","Greenwich Village, New York City","The director of the romantic comedy ""Big Stone Gap"" is based in New York City.","['""Big Stone Gap""', 'New York', 'New York city', 'romantic comedy', 'Big Stone Gap']",,0.29999999625,0.33763018250465393,0.6,4.033646583557129
-2014 S/S is the debut album of a South Korean boy group that was formed by who?,YG Entertainment,The 2014 S/S is the debut album of a South Korean boy group that was formed by SM Entertainment.,"['2014 S/S', 'debut album', 'South Korea', 'album', 'boy group']",,0.09523809351473926,0.3160417079925537,0.5,3.5839478969573975
-Who was known by his stage name Aladin and helped organizations improve their performance as a consultant?,Eenasul Fateh,Aladin,"['Aladin', 'performance', 'consultant', 'organization', 'performance as a consultant']",,0.0,0.18532444536685944,0.0,2.617532730102539
-The arena where the Lewiston Maineiacs played their home games can seat how many people?,"3,677 seated","The arena where the Lewiston Maineiacs played their home games, the Androscoggin Bank Colisee, can seat 3,000 people.","['home games', 'arena', 'Lewiston', 'Maineiacs', 'Lewiston Maineiacs', 'arena where the Lewiston Maineiacs played their home games']",,0.0,0.17293865978717804,0.0,5.8770365715026855
-"Who is older, Annie Morton or Terry Richardson?",Terry Richardson,"To determine who is older between Annie Morton and Terry Richardson, we need to know their birthdates. However, the provided information does not include this detail. Therefore, I cannot determine who is older.","['Annie Morton', 'Terry Richardson']",,0.06451612782518212,0.4336709976196289,1.0,4.680220603942871
-Are Local H and For Against both from the United States?,yes,"The information provided in the Knowledge Graph does not include any details about ""Local H"" or ""For Against."" Therefore, it is not possible to determine if they are from the United States based on the given information.","['United States', 'For Against', 'Local H']","United States:
+- cast member: Patty Arquette",0.0,0.1354520171880722,0.0,6.050211191177368
+What government position was held by the woman who portrayed Corliss Archer in the film Kiss and Tell?,Chief of Protocol,The woman who portrayed Corliss Archer in the film Kiss and Tell was Shirley Temple Black. She held the position of Chief of Protocol of the United States.,"['Corliss Archer', 'Kiss and Tell']","Corliss Archer:
+- performer: Shirley Temple
+- present in work: Kiss and Tell
+- publication date: 1945
+- genre: comedy film
+- present in work: Smile and Tell
+- performer: Shirley Temple
+- present in work: Kiss and Tell
+- publication date: 1945
+- genre: comedy film
+- present in work: Smile and Tell
+Shirley Temple:
+- date of birth: April 23, 1928
+- date of death: February 10, 2014
+- position held: Chief of Protocol of the United States
+- work period (start): 1945
+- country of citizenship: American
+- date of birth: April 23, 1928
+- date of death: February 10, 2014
+- position held: Chief of Protocol of the United States
+- work period (start): 1945
+- country of citizenship: American
+Kiss and Tell:
+- genre: comedy film
+- screenwriter: Howard Dimsdale
+- distributed by: United Artists
+- publication date: 1945
+- cast member: Shirley Temple
+- characters: Corliss Archer
+- country of origin: American
+- depicts: Corliss Archer
+- genre: comedy film
+- screenwriter: Howard Dimsdale
+- distributed by: United Artists
+- publication date: 1945
+- cast member: Shirley Temple
+- characters: Corliss Archer
+- country of origin: American
+- depicts: Corliss Archer
+Chief of Protocol of the United States:
+- officeholder: Shirley Temple Black
+- officeholder: Shirley Temple Black
+American:
+- contains administrative territorial entity: Pennsylvania
+- contains administrative territorial entity: Pennsylvania
+Shirley Temple Black:
+- date of birth: April 23, 1928
+- date of death: February 10, 2014
+- position held: Chief of Protocol of the United States
+- position held: United States ambassador to Ghana
+- country of citizenship: United States
+- date of birth: April 23, 1928
+- date of death: February 10, 2014
+- position held: Chief of Protocol of the United States
+- position held: United States ambassador to Ghana
+- country of citizenship: United States
+Pennsylvania:
+- shares border with: New York City
+- located in the administrative territorial entity: American
+- country: American
+- shares border with: New York City
+- located in the administrative territorial entity: American
+- country: American
+New York City:
+- country: United States
+- owner of: Jacob K. Javits Convention Center
+- shares border with: Pennsylvania
+- twinned administrative body: Los Angeles",0.2222222202469136,0.29793453216552734,1.0,5.22605299949646
+"What science fantasy young adult series, told in first person, has a set of companion books narrating the stories of enslaved worlds and alien species?",Animorphs,"The science fantasy young adult series that fits this description is ""The Illuminae Files"" by Amie Kaufman and Jay Kristoff.","['young adult', 'companion books', 'science fantasy', 'young adult series', 'series']",,0.0,0.13319054245948792,0.0,3.195582389831543
+Are the Laleli Mosque and Esma Sultan Mansion located in the same neighborhood?,no,"No, the Laleli Mosque and Esma Sultan Mansion are not located in the same neighborhood. The Laleli Mosque is located in the Laleli neighborhood, while the Esma Sultan Mansion is located in the Ortaköy neighborhood.","['Esma Sultan Mansion', 'Laleli Mosque']","Esma Sultan Mansion:
+- instance of: yalı
+- located in the administrative territorial entity: Ortaköy
+- country: Turkey
+- located in the administrative territorial entity: Istanbul
+- located in or next to body of water: Bosphorus
+- named after: Esma Sultan
+Ortaköy:
+- country: Turkey
+- located in or next to body of water: Bosphorus
+- located in the administrative territorial entity: Istanbul
+Istanbul:
+- country: Turkey
+- located in or next to body of water: Bosphorus
+- located in or next to: Bosphorus
+- country: Turkey
+- located in or next to body of water: Bosphorus
+- located in or next to: Bosphorus
+Bosphorus:
+- located in the administrative territorial entity: Istanbul
+- country: Turkey
+- located in the administrative territorial entity: Istanbul
+- country: Turkey
+Esma Sultan:
+- date of birth: 21 March 1873
+- date of death: 7 May 1899
+- father: Abdülaziz
+- mother: Gevheri Kadın
+- sibling: Abdülmecid II
+- country of citizenship: Ottoman
+- family: Ottoman
+- spouse: Küçük Hüseyin Pasha
+- spouse: Küçü
+- spouse: Küçük
+- spouse: Ottoman
+- spouse: Ottoman dynasty
+- country of citizenship: Ottoman dynasty
+- spouse: Küçük Hüseyin P
+- date of birth: 17 July 1778
+- father: Abdul Hamid I
+- sibling: Mustafa IV
+- sibling: Mahmud II
+- date of death: 4 June 1848
+- child: Bezmiâlem Sultan
+- child: Rahime Perestu Sultan
+- family: Ottoman Sultans
+- family: Sultans
+- part of: three daughters
+- mother: Sultans
+- father: Sultans
+- instance of: Sultans
+- named after: Sultans
+- mother: Ottoman Sultans
+- mother: Şehzade Meh
+- date of birth: 14 March 1726
+- date of death: 13 August 1788
+- father: Ahmed III
+- mother: Zeynep Kadın
+- sibling: Mustafa III
+- sibling: Abdul Hamid I
+Abdülaziz:
+- child: Esma Sultan
+- spouse: Gevheri Kadın
+- child: Abdülmecid II
+- father: Salih Bey Svatnba
+- country of citizenship: Ottoman
+- family: Ottoman
+- child: Şehzade Mehmed Seyfeddin
+- country of citizenship: Ottoman Empire
+- child: Esma Sultan of the Ottoman Empire
+Gevheri Kadın:
+- child: Esma Sultan
+- spouse: Abdülaziz
+- father: Salih Bey Svatnba
+- mother: Salih Bey Svatnba
+- child: Abdülaziz
+- country of: Ottoman
+- mother: Svatnba
+- spouse: Salih Bey Svatnba
+- child: Abdülmecid II
+- child: Abd
+- spouse: Salih Be
+- date of birth: 8 July 1856
+- date of death: 6 September 1884
+- child: Şehzade Mehmed Seyfeddin
+- child: Esma Sultan of the Ottoman Empire
+Abdülmecid II:
+- sibling: Esma Sultan
+- sibling: Abdülaz
+Ottoman:
+- country: Turkey
+- head of state: Sultans
+- office held by head of the organization: Sultans
+- practiced by: Sultans
+- has part: Sultans
+Küçük Hüseyin Pasha:
+- date of death: 7 December 1803
+- spouse: Esma Sultan
+- military rank: admiral
+- position held: Kapudan Pasha
+- spouse: esma Sultan
+Abdul Hamid I:
+- child: Esma Sultan
+- child: Mustafa IV
+- child: Mahmud II
+- country of citizenship: Ottoman
+Mustafa IV:
+- sibling: Esma Sultan
+- father: Abdul Hamid I
+- sibling: Mahmud II
+- mother: Esma Sultan
+Mahmud II:
+- sibling: Esma Sultan
+- father: Abdul Hamid I
+- father: Mustafa
+- sibling: Mustafa IV
+- sibling: Bezmiâlem
+- sibling: Abdul Hamid
+- mother: Esma Sultan
+Ottoman Sultans:
+- child: Esma Sultan
+- has part: Esma Sultan
+Sultans:
+- country: Ottoman
+- applies to jurisdiction: Ottoman
+- child: Esma Sultan
+- part of: Ottoman
+three daughters:
+- has part: Esma Sultan
+Ahmed III:
+- child: Esma Sultan
+- spouse: Zeynep Kadın
+- child: Mustafa III
+- child: Abdul Hamid I
+- country of citizenship: Ottoman
+Zeynep Kadın:
+- child: Esma Sultan
+- spouse: Ahmed III
+- child: Mustafa III
+- child: Abdul Hamid I
+- child: Abdul Hamid
+- child: Abdul
+Mustafa III:
+- sibling: Esma Sultan
+- father: Ahmed III
+- father: Abdul Hamid I
+- sibling: Abdul Hamid I
+- sibling: Ahmed III
+Salih Bey Svatnba:
+- child: Gevheri Kadın
+- child: Esma Sultan
+- child: Gevheri Kad
+Şehzade Mehmed Seyfeddin:
+- mother: Gevheri Kadın
+- mother: Abdülaziz
+- father: Abdülaziz
+- father: Esma Sultan
+- sibling: Esma Sultan
+Kapudan Pasha:
+- country: Ottoman
+- country: Ottoman dynasty
+Laleli Mosque:
+- located in the administrative territorial entity: Istanbul
+- country: Turkey
+- located in the administrative territorial entity: Fatih
+- located in the administrative territorial entity: Laleli
+Fatih:
+- located in the administrative territorial entity: Istanbul
+- country: Turkey
+Laleli:
+- located in the administrative territorial entity: Fatih
+- country: Turkey
+- located in the administrative territorial entity: Istanbul",0.0,0.07366204261779785,1.0,4.984013557434082
+"The director of the romantic comedy ""Big Stone Gap"" is based in what New York city?","Greenwich Village, New York City","The director of the romantic comedy ""Big Stone Gap,"" Adriana Trigiani, is based in Greenwich Village, which is located in New York City.","['romantic comedy', 'New York city', '""Big Stone Gap""', 'Big Stone Gap', 'New York']","Big Stone Gap:
+- located in the administrative territorial entity: Virginia
+- publication date: 2014
+- director: Adriana Trigiani
+- production company: Altar Identity Studios
+- genre: drama
+- genre: romantic comedy
+- production company: Media Society
+- distributed by: Media Society
+- producer: Donna Gigliotti
+- distributed by: Altar Identity Studios
+- narrative location: Virginia
+Virginia:
+- located in the administrative territorial entity: American
+Adriana Trigiani:
+- work period (start): 2000
+- occupation: film director
+- occupation: television writer
+- ethnic group: Italian American
+- residence: New York City
+- work location: New York City
+- residence: Greenwich Village, New York City
+- residence: Greenwich Village
+American:
+- contains administrative territorial entity: Pennsylvania
+New York City:
+- country: United States
+- owner of: Jacob K. Javits Convention Center
+- shares border with: Pennsylvania
+- twinned administrative body: Los Angeles
+- country: United States
+- owner of: Jacob K. Javits Convention Center
+- shares border with: Pennsylvania
+- twinned administrative body: Los Angeles
+Greenwich Village:
+- located in the administrative territorial entity: New York City
+Pennsylvania:
+- shares border with: New York City
+- located in the administrative territorial entity: American
+- country: American
+- shares border with: New York City
+- located in the administrative territorial entity: American
+- country: American
+United States:
 - contains administrative territorial entity: Arkansas
+- diplomatic relation: Ghana
+- diplomatic relation: Czechoslovakia
+- diplomatic relation: United States
+- contains administrative territorial entity: New Jersey
+- capital: New York City
+- contains administrative territorial entity: Minnesota
+- office held by head of government: President
+- contains administrative territorial entity: Maine
+- contains administrative territorial entity: New York
+- contains administrative territorial entity: California
+- contains administrative territorial entity: Mendocino County, California
+- contains administrative territorial entity: Mendocino County
+- contains administrative territorial entity: Idaho
+- contains administrative territorial entity: Oregon
+- contains administrative territorial entity: Utah
+- contains administrative territorial entity: Massachusetts
+- contains administrative territorial entity: Nebraska
+- contains administrative territorial entity: Arkansas
+- diplomatic relation: Ghana
+- diplomatic relation: Czechoslovakia
+- diplomatic relation: United States
+- contains administrative territorial entity: New Jersey
+- capital: New York City
+- contains administrative territorial entity: Minnesota
+- office held by head of government: President
+- contains administrative territorial entity: Maine
+- contains administrative territorial entity: New York
+- contains administrative territorial entity: California
+- contains administrative territorial entity: Mendocino County, California
+- contains administrative territorial entity: Mendocino County
+- contains administrative territorial entity: Idaho
+- contains administrative territorial entity: Oregon
+- contains administrative territorial entity: Utah
+- contains administrative territorial entity: Massachusetts
+- contains administrative territorial entity: Nebraska
+Jacob K. Javits Convention Center:
+- owned by: New York City
+- location: New York City
+- located in the administrative territorial entity: New York City
+- owned by: New York City
+- location: New York City
+- located in the administrative territorial entity: New York City
+Los Angeles:
+- country: American
+- twinned administrative body: New York City
+- country: American
+- twinned administrative body: New York City
+New York:
+- contains administrative territorial entity: Brooklyn
+- country: United States
+Brooklyn:
+- located in the administrative territorial entity: New York
 Arkansas:
+- contains administrative territorial entity: Pulaski County
+- country: United States
+Ghana:
+- diplomatic relation: United States
+- diplomatic relation: Czechoslovakia
+Czechoslovakia:
+- diplomatic relation: United States
+- diplomatic relation: Ghana
+New Jersey:
+- country: United States
+- located in the administrative territorial entity: United States
+Minnesota:
+- contains administrative territorial entity: Big Stone County
+- country: United States
+President:
+- country: United States
+- officeholder: Obamas
+- country: USA
+Maine:
+- country: United States
+California:
+- country: United States
+- contains administrative territorial entity: Mendocino County
+- located in the administrative territorial entity: United States
+Mendocino County, California:
+- country: United States
+Mendocino County:
+- country: United States
+- located in the administrative territorial entity: California
+Idaho:
+- country: United States
+Oregon:
+- country: United States
+Utah:
+- country: United States
+Massachusetts:
+- contains administrative territorial entity: Hampshire County
+- country: United States
+Nebraska:
+- country: United States
+- capital: Lincoln
+Pulaski County:
+- located in the administrative territorial entity: Arkansas
+- country: United States
+Big Stone County:
+- located in the administrative territorial entity: Minnesota
+- country: United States
+- named after: DeWitt Clinton
+Obamas:
+- position held: President
+- country: United States
+- country: USA
+Hampshire County:
+- contains administrative territorial entity: Amherst
+- located in the administrative territorial entity: Massachusetts
+- contains administrative territorial entity: Northampton
+- country: United States
+- capital: Northampton
+Lincoln:
+- country: United States",0.38461538150887575,0.4154817461967468,1.0,4.32026219367981
+2014 S/S is the debut album of a South Korean boy group that was formed by who?,YG Entertainment,YG Entertainment,"['debut album', '2014 S/S', 'South Korea', 'album', 'boy group']","2014 S/S:
+- performer: WINNER
+- record label: YG Entertainment
+- publication date: August 12, 2014
+WINNER:
+- record label: YG Entertainment
+- country of origin: South Korea
+- location of formation: South Korea
+- inception: 2014
+- work period (start): 2014
+- country of origin: South Korean
+YG Entertainment:
+- country: South Korea",0.999999995,1.0000001192092896,1.0,3.040092706680298
+Who was known by his stage name Aladin and helped organizations improve their performance as a consultant?,Eenasul Fateh,"The information provided does not directly link Aladin to management consulting or helping organizations improve their performance. Aladin is only mentioned with his date of birth. Therefore, based on the given Knowledge Graph, there is no information to suggest that Aladin was a management consultant or helped organizations improve their performance.","['consultant', 'organization', 'performance as a consultant', 'Aladin', 'performance']","organization:
+- practiced by: Management consulting
+Management consulting:
+- facet of: organization
+- facet of: organizations
+- practiced by: management consultant
+- practiced by: management consultants
+- field of this occupation: organizations
+- field of this occupation: organization
+- part of: organizations
+organizations:
+- practiced by: Management consulting
+management consultant:
+- field of this occupation: Management consulting
+- field of this occupation: management problem
+- field of this occupation: Organization
+- field of this occupation: management problems
+- field of this occupation: management
+- field of this occupation: Organizations
+- field of this occupation: management consulting
+management consultants:
+- field of this occupation: Management consulting
+- field of this occupation: management
+- field of this occupation: Organizations
+- field of this occupation: Organization
+management problem:
+- practiced by: management consultant
+Organization:
+- practiced by: management consultant
+- practiced by: management consultants
+management problems:
+- practiced by: management consultant
+management:
+- practiced by: management consultant
+- practiced by: management consultants
+Organizations:
+- practiced by: management consultant
+- practiced by: management consultants
+Aladin:
+- date of birth: 3 April 1959",0.0,-0.015176337212324142,0.0,3.370006799697876
+The arena where the Lewiston Maineiacs played their home games can seat how many people?,"3,677 seated",The information provided in the Knowledge Graph does not include the seating capacity of the Androscoggin Bank Colisée.,"['arena where the Lewiston Maineiacs played their home games', 'home games', 'Maineiacs', 'Lewiston', 'arena', 'Lewiston Maineiacs']","Lewiston:
+- country: United States
+- country: United States
+United States:
+- contains administrative territorial entity: Arkansas
+- diplomatic relation: Ghana
+- diplomatic relation: Czechoslovakia
+- diplomatic relation: United States
+- contains administrative territorial entity: New Jersey
+- capital: New York City
+- contains administrative territorial entity: Minnesota
+- office held by head of government: President
+- contains administrative territorial entity: Maine
+- contains administrative territorial entity: New York
+- contains administrative territorial entity: California
+- contains administrative territorial entity: Mendocino County, California
+- contains administrative territorial entity: Mendocino County
+- contains administrative territorial entity: Idaho
+- contains administrative territorial entity: Oregon
+- contains administrative territorial entity: Utah
+- contains administrative territorial entity: Massachusetts
+- contains administrative territorial entity: Nebraska
+- contains administrative territorial entity: Arkansas
+- diplomatic relation: Ghana
+- diplomatic relation: Czechoslovakia
+- diplomatic relation: United States
+- contains administrative territorial entity: New Jersey
+- capital: New York City
+- contains administrative territorial entity: Minnesota
+- office held by head of government: President
+- contains administrative territorial entity: Maine
+- contains administrative territorial entity: New York
+- contains administrative territorial entity: California
+- contains administrative territorial entity: Mendocino County, California
+- contains administrative territorial entity: Mendocino County
+- contains administrative territorial entity: Idaho
+- contains administrative territorial entity: Oregon
+- contains administrative territorial entity: Utah
+- contains administrative territorial entity: Massachusetts
+- contains administrative territorial entity: Nebraska
+Arkansas:
+- contains administrative territorial entity: Pulaski County
+- country: United States
+- contains administrative territorial entity: Pulaski County
+- country: United States
+Ghana:
+- diplomatic relation: United States
+- diplomatic relation: Czechoslovakia
+- diplomatic relation: United States
+- diplomatic relation: Czechoslovakia
+Czechoslovakia:
+- diplomatic relation: United States
+- diplomatic relation: Ghana
+- diplomatic relation: United States
+- diplomatic relation: Ghana
+New Jersey:
+- country: United States
+- located in the administrative territorial entity: United States
+- country: United States
+- located in the administrative territorial entity: United States
+New York City:
+- country: United States
+- owner of: Jacob K. Javits Convention Center
+- shares border with: Pennsylvania
+- twinned administrative body: Los Angeles
+- country: United States
+- owner of: Jacob K. Javits Convention Center
+- shares border with: Pennsylvania
+- twinned administrative body: Los Angeles
+Minnesota:
+- contains administrative territorial entity: Big Stone County
+- country: United States
+- contains administrative territorial entity: Big Stone County
+- country: United States
+President:
+- country: United States
+- officeholder: Obamas
+- country: USA
+- country: United States
+- officeholder: Obamas
+- country: USA
+Maine:
+- country: United States
+- country: United States
+New York:
+- contains administrative territorial entity: Brooklyn
+- country: United States
+- contains administrative territorial entity: Brooklyn
+- country: United States
+California:
+- country: United States
+- contains administrative territorial entity: Mendocino County
+- located in the administrative territorial entity: United States
+- country: United States
+- contains administrative territorial entity: Mendocino County
+- located in the administrative territorial entity: United States
+Mendocino County, California:
+- country: United States
+- country: United States
+Mendocino County:
+- country: United States
+- located in the administrative territorial entity: California
+- country: United States
+- located in the administrative territorial entity: California
+Idaho:
+- country: United States
+- country: United States
+Oregon:
+- country: United States
+- country: United States
+Utah:
+- country: United States
+- country: United States
+Massachusetts:
+- contains administrative territorial entity: Hampshire County
+- country: United States
+- contains administrative territorial entity: Hampshire County
+- country: United States
+Nebraska:
+- country: United States
+- capital: Lincoln
+- country: United States
+- capital: Lincoln
+Pulaski County:
+- located in the administrative territorial entity: Arkansas
+- country: United States
+- located in the administrative territorial entity: Arkansas
+- country: United States
+Jacob K. Javits Convention Center:
+- owned by: New York City
+- location: New York City
+- located in the administrative territorial entity: New York City
+- owned by: New York City
+- location: New York City
+- located in the administrative territorial entity: New York City
+Pennsylvania:
+- shares border with: New York City
+- located in the administrative territorial entity: American
+- country: American
+- shares border with: New York City
+- located in the administrative territorial entity: American
+- country: American
+Los Angeles:
+- country: American
+- twinned administrative body: New York City
+- country: American
+- twinned administrative body: New York City
+Big Stone County:
+- located in the administrative territorial entity: Minnesota
+- country: United States
+- named after: DeWitt Clinton
+- located in the administrative territorial entity: Minnesota
+- country: United States
+- named after: DeWitt Clinton
+Obamas:
+- position held: President
+- country: United States
+- country: USA
+- position held: President
+- country: United States
+- country: USA
+Brooklyn:
+- located in the administrative territorial entity: New York
+- located in the administrative territorial entity: New York
+Hampshire County:
+- contains administrative territorial entity: Amherst
+- located in the administrative territorial entity: Massachusetts
+- contains administrative territorial entity: Northampton
+- country: United States
+- capital: Northampton
+- contains administrative territorial entity: Amherst
+- located in the administrative territorial entity: Massachusetts
+- contains administrative territorial entity: Northampton
+- country: United States
+- capital: Northampton
+Lincoln:
+- country: United States
+- country: United States
+Lewiston Maineiacs:
+- dissolved, abolished or demolished date: 2011
+- sport: ice hockey
+- country: United States
+- inception: 2007
+- home venue: Androscoggin Bank Colisée
+- league: Quebec Major Junior Hockey League
+2011:
+- sports season of league or competition: Quebec Major Junior Hockey League
+2007:
+- sport: ice hockey
+- sports season of league or competition: Quebec Major Junior Hockey League
+- point in time: 2007
+Androscoggin Bank Colisée:
+- located in the administrative territorial entity: Lewiston, Maine
+- date of official opening: 1958
+- instance of: arena
+- owned by: Lewiston, Maine
+- sport: ice hockey
+- occupant: Lewiston Maineiacs
+- located in the administrative territorial entity: Maine
+- located in the administrative territorial entity: Lewiston
+Quebec Major Junior Hockey League:
+- inception: 2011
+- sport: ice hockey
+- country: United States
+- number of participants: 38
+Lewiston, Maine:
+- owner of: Androscoggin Bank Colisée
+- country: United States",0.0,0.09817963093519211,0.0,4.302621364593506
+"Who is older, Annie Morton or Terry Richardson?",Terry Richardson,"Annie Morton is older. She was born on October 8, 1970, while Terry Richardson was born on July 26, 1999.","['Annie Morton', 'Terry Richardson']","Annie Morton:
+- date of birth: October 8, 1970
+- place of birth: Pennsylvania
+- country of citizenship: American
+Pennsylvania:
+- shares border with: New York City
+- located in the administrative territorial entity: American
+- country: American
+- shares border with: New York City
+- located in the administrative territorial entity: American
+- country: American
+American:
+- contains administrative territorial entity: Pennsylvania
+- contains administrative territorial entity: Pennsylvania
+New York City:
+- country: United States
+- owner of: Jacob K. Javits Convention Center
+- shares border with: Pennsylvania
+- twinned administrative body: Los Angeles
+- country: United States
+- owner of: Jacob K. Javits Convention Center
+- shares border with: Pennsylvania
+- twinned administrative body: Los Angeles
+United States:
+- contains administrative territorial entity: Arkansas
+- diplomatic relation: Ghana
+- diplomatic relation: Czechoslovakia
+- diplomatic relation: United States
+- contains administrative territorial entity: New Jersey
+- capital: New York City
+- contains administrative territorial entity: Minnesota
+- office held by head of government: President
+- contains administrative territorial entity: Maine
+- contains administrative territorial entity: New York
+- contains administrative territorial entity: California
+- contains administrative territorial entity: Mendocino County, California
+- contains administrative territorial entity: Mendocino County
+- contains administrative territorial entity: Idaho
+- contains administrative territorial entity: Oregon
+- contains administrative territorial entity: Utah
+- contains administrative territorial entity: Massachusetts
+- contains administrative territorial entity: Nebraska
+- contains administrative territorial entity: Arkansas
+- diplomatic relation: Ghana
+- diplomatic relation: Czechoslovakia
+- diplomatic relation: United States
+- contains administrative territorial entity: New Jersey
+- capital: New York City
+- contains administrative territorial entity: Minnesota
+- office held by head of government: President
+- contains administrative territorial entity: Maine
+- contains administrative territorial entity: New York
+- contains administrative territorial entity: California
+- contains administrative territorial entity: Mendocino County, California
+- contains administrative territorial entity: Mendocino County
+- contains administrative territorial entity: Idaho
+- contains administrative territorial entity: Oregon
+- contains administrative territorial entity: Utah
+- contains administrative territorial entity: Massachusetts
+- contains administrative territorial entity: Nebraska
+Jacob K. Javits Convention Center:
+- owned by: New York City
+- location: New York City
+- located in the administrative territorial entity: New York City
+- owned by: New York City
+- location: New York City
+- located in the administrative territorial entity: New York City
+Los Angeles:
+- country: American
+- twinned administrative body: New York City
+- country: American
+- twinned administrative body: New York City
+Terry Richardson:
+- work location: New York City
+- country of citizenship: Belgian
+- date of birth: 26 July 1999
+- sport: footballer
+- member of sports team: Hartlepool United
+- position played on team / speciality: defender
+- league: League Two
+- occupation: footballer
+- sport: football
+- place of birth: English
+Hartlepool United:
+- sport: footballer
+- league: League Two
+- sport: football
+defender:
+- sport: footballer
+- sport: football
+League Two:
+- sport: footballer
+- sport: football
+English:
+- located in the administrative territorial entity: British
+- country: British
+British:
+- contains administrative territorial entity: English
+- office held by head of government: Deputy Prime Minister
+Arkansas:
+- contains administrative territorial entity: Pulaski County
+- country: United States
+Ghana:
+- diplomatic relation: United States
+- diplomatic relation: Czechoslovakia
+Czechoslovakia:
+- diplomatic relation: United States
+- diplomatic relation: Ghana
+New Jersey:
+- country: United States
+- located in the administrative territorial entity: United States
+Minnesota:
+- contains administrative territorial entity: Big Stone County
+- country: United States
+President:
+- country: United States
+- officeholder: Obamas
+- country: USA
+Maine:
+- country: United States
+New York:
+- contains administrative territorial entity: Brooklyn
+- country: United States
+California:
+- country: United States
+- contains administrative territorial entity: Mendocino County
+- located in the administrative territorial entity: United States
+Mendocino County, California:
+- country: United States
+Mendocino County:
+- country: United States
+- located in the administrative territorial entity: California
+Idaho:
+- country: United States
+Oregon:
+- country: United States
+Utah:
+- country: United States
+Massachusetts:
+- contains administrative territorial entity: Hampshire County
+- country: United States
+Nebraska:
+- country: United States
+- capital: Lincoln
+Deputy Prime Minister:
+- part of: British Government
+- country: British
+- different from: First Secretary of State
+- inception: 2003",0.2105263139058172,0.3762919008731842,1.0,3.775428533554077
+Are Local H and For Against both from the United States?,yes,"Yes, both Local H and For Against are from the United States.","['For Against', 'United States', 'Local H']","For Against:
+- location of formation: Lincoln, Nebraska
+- inception: 1984
+- country of origin: United States
+- genre: post-punk
+- genre: dream pop
+- location of formation: Lincoln
+Lincoln, Nebraska:
+- country: United States
+United States:
+- contains administrative territorial entity: Arkansas
+- diplomatic relation: Ghana
+- diplomatic relation: Czechoslovakia
+- diplomatic relation: United States
+- contains administrative territorial entity: New Jersey
+- capital: New York City
+- contains administrative territorial entity: Minnesota
+- office held by head of government: President
+- contains administrative territorial entity: Maine
+- contains administrative territorial entity: New York
+- contains administrative territorial entity: California
+- contains administrative territorial entity: Mendocino County, California
+- contains administrative territorial entity: Mendocino County
+- contains administrative territorial entity: Idaho
+- contains administrative territorial entity: Oregon
+- contains administrative territorial entity: Utah
+- contains administrative territorial entity: Massachusetts
+- contains administrative territorial entity: Nebraska
+- contains administrative territorial entity: Arkansas
+- diplomatic relation: Ghana
+- diplomatic relation: Czechoslovakia
+- diplomatic relation: United States
+- contains administrative territorial entity: New Jersey
+- capital: New York City
+- contains administrative territorial entity: Minnesota
+- office held by head of government: President
+- contains administrative territorial entity: Maine
+- contains administrative territorial entity: New York
+- contains administrative territorial entity: California
+- contains administrative territorial entity: Mendocino County, California
+- contains administrative territorial entity: Mendocino County
+- contains administrative territorial entity: Idaho
+- contains administrative territorial entity: Oregon
+- contains administrative territorial entity: Utah
+- contains administrative territorial entity: Massachusetts
+- contains administrative territorial entity: Nebraska
+- contains administrative territorial entity: Arkansas
+- diplomatic relation: Ghana
+- diplomatic relation: Czechoslovakia
+- diplomatic relation: United States
+- contains administrative territorial entity: New Jersey
+- capital: New York City
+- contains administrative territorial entity: Minnesota
+- office held by head of government: President
+- contains administrative territorial entity: Maine
+- contains administrative territorial entity: New York
+- contains administrative territorial entity: California
+- contains administrative territorial entity: Mendocino County, California
+- contains administrative territorial entity: Mendocino County
+- contains administrative territorial entity: Idaho
+- contains administrative territorial entity: Oregon
+- contains administrative territorial entity: Utah
+- contains administrative territorial entity: Massachusetts
+- contains administrative territorial entity: Nebraska
+post-punk:
+- country of origin: United States
+dream pop:
+- country of origin: United States
+- subclass of: post-punk
+Lincoln:
+- country: United States
+- country: United States
+- country: United States
+Arkansas:
+- contains administrative territorial entity: Pulaski County
+- country: United States
+- contains administrative territorial entity: Pulaski County
+- country: United States
+- contains administrative territorial entity: Pulaski County
+- country: United States
+Ghana:
+- diplomatic relation: United States
+- diplomatic relation: Czechoslovakia
+- diplomatic relation: United States
+- diplomatic relation: Czechoslovakia
+- diplomatic relation: United States
+- diplomatic relation: Czechoslovakia
+Czechoslovakia:
+- diplomatic relation: United States
+- diplomatic relation: Ghana
+- diplomatic relation: United States
+- diplomatic relation: Ghana
+- diplomatic relation: United States
+- diplomatic relation: Ghana
+New Jersey:
+- country: United States
+- located in the administrative territorial entity: United States
+- country: United States
+- located in the administrative territorial entity: United States
+- country: United States
+- located in the administrative territorial entity: United States
+New York City:
+- country: United States
+- owner of: Jacob K. Javits Convention Center
+- shares border with: Pennsylvania
+- twinned administrative body: Los Angeles
+- country: United States
+- owner of: Jacob K. Javits Convention Center
+- shares border with: Pennsylvania
+- twinned administrative body: Los Angeles
+- country: United States
+- owner of: Jacob K. Javits Convention Center
+- shares border with: Pennsylvania
+- twinned administrative body: Los Angeles
+Minnesota:
+- contains administrative territorial entity: Big Stone County
+- country: United States
+- contains administrative territorial entity: Big Stone County
+- country: United States
+- contains administrative territorial entity: Big Stone County
+- country: United States
+President:
+- country: United States
+- officeholder: Obamas
+- country: USA
+- country: United States
+- officeholder: Obamas
+- country: USA
+- country: United States
+- officeholder: Obamas
+- country: USA
+Maine:
+- country: United States
+- country: United States
+- country: United States
+New York:
+- contains administrative territorial entity: Brooklyn
+- country: United States
+- contains administrative territorial entity: Brooklyn
+- country: United States
+- contains administrative territorial entity: Brooklyn
+- country: United States
+California:
+- country: United States
+- contains administrative territorial entity: Mendocino County
+- located in the administrative territorial entity: United States
+- country: United States
+- contains administrative territorial entity: Mendocino County
+- located in the administrative territorial entity: United States
+- country: United States
+- contains administrative territorial entity: Mendocino County
+- located in the administrative territorial entity: United States
+Mendocino County, California:
+- country: United States
+- country: United States
+- country: United States
+Mendocino County:
+- country: United States
+- located in the administrative territorial entity: California
+- country: United States
+- located in the administrative territorial entity: California
+- country: United States
+- located in the administrative territorial entity: California
+Idaho:
+- country: United States
+- country: United States
+- country: United States
+Oregon:
+- country: United States
+- country: United States
+- country: United States
+Utah:
+- country: United States
+- country: United States
+- country: United States
+Massachusetts:
+- contains administrative territorial entity: Hampshire County
+- country: United States
+- contains administrative territorial entity: Hampshire County
+- country: United States
+- contains administrative territorial entity: Hampshire County
+- country: United States
+Nebraska:
+- country: United States
+- capital: Lincoln
+- country: United States
+- capital: Lincoln
+- country: United States
+- capital: Lincoln
+Pulaski County:
+- located in the administrative territorial entity: Arkansas
+- country: United States
+- located in the administrative territorial entity: Arkansas
+- country: United States
+- located in the administrative territorial entity: Arkansas
+- country: United States
+Jacob K. Javits Convention Center:
+- owned by: New York City
+- location: New York City
+- located in the administrative territorial entity: New York City
+- owned by: New York City
+- location: New York City
+- located in the administrative territorial entity: New York City
+- owned by: New York City
+- location: New York City
+- located in the administrative territorial entity: New York City
+Pennsylvania:
+- shares border with: New York City
+- located in the administrative territorial entity: American
+- country: American
+- shares border with: New York City
+- located in the administrative territorial entity: American
+- country: American
+- shares border with: New York City
+- located in the administrative territorial entity: American
+- country: American
+Los Angeles:
+- country: American
+- twinned administrative body: New York City
+- country: American
+- twinned administrative body: New York City
+- country: American
+- twinned administrative body: New York City
+Big Stone County:
+- located in the administrative territorial entity: Minnesota
+- country: United States
+- named after: DeWitt Clinton
+- located in the administrative territorial entity: Minnesota
+- country: United States
+- named after: DeWitt Clinton
+- located in the administrative territorial entity: Minnesota
+- country: United States
+- named after: DeWitt Clinton
+Obamas:
+- position held: President
+- country: United States
+- country: USA
+- position held: President
+- country: United States
+- country: USA
+- position held: President
+- country: United States
+- country: USA
+Brooklyn:
+- located in the administrative territorial entity: New York
+- located in the administrative territorial entity: New York
+- located in the administrative territorial entity: New York
+Hampshire County:
+- contains administrative territorial entity: Amherst
+- located in the administrative territorial entity: Massachusetts
+- contains administrative territorial entity: Northampton
+- country: United States
+- capital: Northampton
+- contains administrative territorial entity: Amherst
+- located in the administrative territorial entity: Massachusetts
+- contains administrative territorial entity: Northampton
+- country: United States
+- capital: Northampton
+- contains administrative territorial entity: Amherst
+- located in the administrative territorial entity: Massachusetts
+- contains administrative territorial entity: Northampton
+- country: United States
+- capital: Northampton
+American:
+- contains administrative territorial entity: Pennsylvania
+DeWitt Clinton:
+- position held: New York Governor
+Amherst:
+- located in the administrative territorial entity: Hampshire County
+- country: United States
+- located in the administrative territorial entity: Hampshire County, Massachusetts
+Northampton:
+- located in the administrative territorial entity: Hampshire County
+- located in the administrative territorial entity: Hampshire County, Massachusetts
+- country: United States
+- located in the administrative territorial entity: United
+- located in: Hampshire County
+- located in the administrative territorial: Hampshire County
+Local H:
+- inception: 1987
+- location of formation: Zion, Illinois
+- work period (start): 1987
+- has part: Scott Lucas
+- location of formation: Zion
+- country of origin: United States
+- location of formation: Chicago
+Scott Lucas:
+- work period (start): 1987
+- member of: Local H
+- place of birth: Zion, Illinois
+- part of: Local H
+Chicago:
+- country: United States",0.0,0.221542090177536,1.0,3.904421329498291
+"What is the name of the fight song of the university whose main campus is in Lawrence, Kansas and whose branch campuses are in the Kansas City metropolitan area?",Kansas Song,"The fight song of the University of Kansas, whose main campus is in Lawrence, Kansas, and whose branch campuses are in the Kansas City metropolitan area, is ""Rock Chalk, Jayhawk.""","['Kansas City metropolitan area', 'Kansas', 'Lawrence', 'Lawrence, Kansas']",,0.07407407270233198,0.6355298757553101,1.0,3.465902090072632
+"What screenwriter with credits for ""Evolution"" co-wrote a film starring Nicolas Cage and Téa Leoni?",David Weissman,"The screenwriter with credits for ""Evolution"" who also co-wrote a film starring Nicolas Cage and Téa Leoni is Don Jakoby.","['Evolution', 'a film', 'Téa Leoni', 'Nicolas Cage', 'film']",,0.0,0.21328255534172058,0.0,6.075271129608154
+What year did Guns N Roses perform a promo for a movie starring Arnold Schwarzenegger as a former New York Police detective?,1999,"Guns N' Roses performed a promo for the movie ""Last Action Hero"" in 1993.","['Arnold Schwarzenegger', 'a movie', 'movie', 'New York Police', 'Guns N Roses']",,0.0,0.23319432139396667,0.0,4.433887720108032
+Are Random House Tower and 888 7th Avenue both used for real estate?,no,"No, they are not both used for real estate. The Random House Tower is an office building, while 888 7th Avenue is a residential building.","['Random House Tower', 'real estate', '888 7th Avenue']",,0.0,0.11292526125907898,1.0,5.339287281036377
+The football manager who recruited David Beckham managed Manchester United during what timeframe?,from 1986 to 2013,"The football manager who recruited David Beckham, Sir Alex Ferguson, managed Manchester United from 1986 to 2013.","['football manager', 'Manchester United', 'football', 'David Beckham']",,0.38095237786848074,0.365639328956604,1.0,5.038273334503174
+Brown State Fishing Lake is in a country that has a population of how many inhabitants ?,"9,984","To determine the population of the country where Brown State Fishing Lake is located, we need to identify the country first. However, the provided information does not specify the country where Brown State Fishing Lake is located. Therefore, I cannot determine the population of the country based on the given details.","['a country', 'country that has a population of how many inhabitants', 'country', 'Brown State Fishing Lake']",,0.0,0.0283487718552351,0.0,4.576078414916992
+The Vermont Catamounts men's soccer team currently competes in a conference that was formerly known as what from 1988 to 1996?,the North Atlantic Conference,"The Vermont Catamounts men's soccer team currently competes in the America East Conference, which was formerly known as the North Atlantic Conference from 1988 to 1996.","['soccer', ""men's soccer"", 'a conference', ""Vermont Catamounts men's soccer"", '1988', 'conference']",,0.27586206658739604,0.5694912075996399,1.0,3.9997448921203613
+Are Giuseppe Verdi and Ambroise Thomas both Opera composers ?,yes,"Yes, both Giuseppe Verdi and Ambroise Thomas are opera composers.","['Giuseppe Verdi', 'Ambroise Thomas', 'Opera composer']",,0.0,0.09423191845417023,1.0,3.8666186332702637
+Roger O. Egeberg was Assistant Secretary for Health and Scientific Affairs during the administration of a president that served during what years?,1969 until 1974,"Roger O. Egeberg was Assistant Secretary for Health and Scientific Affairs during the administration of Lyndon B. Johnson, who served as President from 1963 to 1969.","['president', 'Roger O. Egeberg', 'Assistant Secretary for Health and Scientific Affairs']",,0.06896551538644476,0.2040986865758896,0.3333333333333333,6.6699299812316895
+"Which writer was from England, Henry Roth or Robert Erskine Childers?",Robert Erskine Childers DSC,Robert Erskine Childers,"['Robert Erskine Childers', 'England', 'Henry Roth']",,0.8571428522448981,0.8795788288116455,0.75,4.0199995040893555
+Which other Mexican Formula One race car driver has held the podium besides the Force India driver born in 1990?,Pedro Rodríguez,The other Mexican Formula One race car driver who has held the podium is Sergio Pérez.,"['Force India driver', 'Force India', 'Formula One', '1990']",,0.0,0.4679054617881775,0.0,2.952435255050659
+This singer of A Rather Blustery Day also voiced what hedgehog?,Sonic,"The singer of ""A Rather Blustery Day"" who also voiced a hedgehog is **Seth Green**.","['singer', 'This singer', 'this singer', 'A Rather Blustery Day']",,0.0,0.33288049697875977,0.0,3.599052906036377
+"Aside from the Apple Remote, what other device can control the program Apple Remote was originally designed to interact with?",keyboard function keys,The iPhone can also control the program Apple Remote was originally designed to interact with.,['Apple Remote'],,0.0,0.13013751804828644,0.0,3.648599624633789
+"Which performance act has a higher instrument to person ratio, Badly Drawn Boy or Wolf Alice? ",Badly Drawn Boy,"To determine which performance act has a higher instrument to person ratio, we need to know the number of instruments and the number of people involved in each act.
+
+However, the provided Knowledge Graph does not include specific details about the number of instruments or people involved in the performances of Badly Drawn Boy or Wolf Alice. Therefore, it is not possible to determine which act has a higher instrument to person ratio based on the given information.","['Wolf Alice', 'Badly Drawn Boy']",,0.1132075461018156,0.19474537670612335,1.0,4.749150514602661
+What was the father of Kasper Schmeichel voted to be by the IFFHS in 1992?,World's Best Goalkeeper,"The father of Kasper Schmeichel, Peter Schmeichel, was voted the IFFHS World's Best Goalkeeper in 1992.","['IFFHS', 'Kasper Schmeichel', 'father', '1992']",,0.33333333055555564,0.6232351660728455,1.0,3.1959550380706787
+Who was the writer of These Boots Are Made for Walkin' and who died in 2007?,Barton Lee Hazlewood,"The information provided in the Knowledge Graph does not include details about the writer of ""These Boots Are Made for Walkin'"" or any individuals who died in 2007. Therefore, I cannot answer the question based on the given information.","['2007', ""These Boots Are Made for Walkin'""]","2007:
+- sport: ice hockey
+- sports season of league or competition: Quebec Major Junior Hockey League
+- point in time: 2007
+Quebec Major Junior Hockey League:
+- inception: 2011
+- sport: ice hockey
+- country: United States
+- number of participants: 38
+2011:
+- sports season of league or competition: Quebec Major Junior Hockey League
+United States:
+- contains administrative territorial entity: Arkansas
+- diplomatic relation: Ghana
+- diplomatic relation: Czechoslovakia
+- diplomatic relation: United States
+- contains administrative territorial entity: New Jersey
+- capital: New York City
+- contains administrative territorial entity: Minnesota
+- office held by head of government: President
+- contains administrative territorial entity: Maine
+- contains administrative territorial entity: New York
+- contains administrative territorial entity: California
+- contains administrative territorial entity: Mendocino County, California
+- contains administrative territorial entity: Mendocino County
+- contains administrative territorial entity: Idaho
+- contains administrative territorial entity: Oregon
+- contains administrative territorial entity: Utah
+- contains administrative territorial entity: Massachusetts
+- contains administrative territorial entity: Nebraska
+Arkansas:
+- contains administrative territorial entity: Pulaski County
+- country: United States
+Ghana:
+- diplomatic relation: United States
+- diplomatic relation: Czechoslovakia
+Czechoslovakia:
+- diplomatic relation: United States
+- diplomatic relation: Ghana
+New Jersey:
+- country: United States
+- located in the administrative territorial entity: United States
+New York City:
+- country: United States
+- owner of: Jacob K. Javits Convention Center
+- shares border with: Pennsylvania
+- twinned administrative body: Los Angeles
+Minnesota:
+- contains administrative territorial entity: Big Stone County
+- country: United States
+President:
+- country: United States
+- officeholder: Obamas
+- country: USA
+Maine:
+- country: United States
+New York:
+- contains administrative territorial entity: Brooklyn
+- country: United States
+California:
+- country: United States
+- contains administrative territorial entity: Mendocino County
+- located in the administrative territorial entity: United States
+Mendocino County, California:
+- country: United States
+Mendocino County:
+- country: United States
+- located in the administrative territorial entity: California
+Idaho:
+- country: United States
+Oregon:
+- country: United States
+Utah:
+- country: United States
+Massachusetts:
+- contains administrative territorial entity: Hampshire County
+- country: United States
+Nebraska:
+- country: United States
+- capital: Lincoln",0.0,0.13755999505519867,0.0,5.052027463912964
+"The 2011–12 VCU Rams men's basketball team, led by third year head coach Shaka Smart, represented Virginia Commonwealth University which was founded in what year?",1838,"The information provided in the Knowledge Graph does not include details about Virginia Commonwealth University or the 2011–12 VCU Rams men's basketball team. Therefore, I cannot answer the question based on the given information.","['2011', ""VCU Rams men's basketball"", 'what year', 'VCU Rams', 'Virginia Commonwealth University', ""2011–12 VCU Rams men's basketball team""]","2011:
+- sports season of league or competition: Quebec Major Junior Hockey League
+Quebec Major Junior Hockey League:
+- inception: 2011
+- sport: ice hockey
+- country: United States
+- number of participants: 38
+United States:
+- contains administrative territorial entity: Arkansas
+- diplomatic relation: Ghana
+- diplomatic relation: Czechoslovakia
+- diplomatic relation: United States
+- contains administrative territorial entity: New Jersey
+- capital: New York City
+- contains administrative territorial entity: Minnesota
+- office held by head of government: President
+- contains administrative territorial entity: Maine
+- contains administrative territorial entity: New York
+- contains administrative territorial entity: California
+- contains administrative territorial entity: Mendocino County, California
+- contains administrative territorial entity: Mendocino County
+- contains administrative territorial entity: Idaho
+- contains administrative territorial entity: Oregon
+- contains administrative territorial entity: Utah
+- contains administrative territorial entity: Massachusetts
+- contains administrative territorial entity: Nebraska
+Arkansas:
+- contains administrative territorial entity: Pulaski County
+- country: United States
+Ghana:
+- diplomatic relation: United States
+- diplomatic relation: Czechoslovakia
+Czechoslovakia:
+- diplomatic relation: United States
+- diplomatic relation: Ghana
+New Jersey:
+- country: United States
+- located in the administrative territorial entity: United States
+New York City:
+- country: United States
+- owner of: Jacob K. Javits Convention Center
+- shares border with: Pennsylvania
+- twinned administrative body: Los Angeles
+Minnesota:
+- contains administrative territorial entity: Big Stone County
+- country: United States
+President:
+- country: United States
+- officeholder: Obamas
+- country: USA
+Maine:
+- country: United States
+New York:
+- contains administrative territorial entity: Brooklyn
+- country: United States
+California:
+- country: United States
+- contains administrative territorial entity: Mendocino County
+- located in the administrative territorial entity: United States
+Mendocino County, California:
+- country: United States
+Mendocino County:
+- country: United States
+- located in the administrative territorial entity: California
+Idaho:
+- country: United States
+Oregon:
+- country: United States
+Utah:
+- country: United States
+Massachusetts:
+- contains administrative territorial entity: Hampshire County
+- country: United States
+Nebraska:
+- country: United States
+- capital: Lincoln",0.0,0.09857679903507233,0.0,4.946252822875977
+"Are both Dictyosperma, and Huernia described as a genus?",yes,"Yes, both *Dictyosperma* and *Huernia* are described as genera.","['genus', 'Dictyosperma', 'Huernia']",,0.0,0.13031993806362152,1.0,5.497591018676758
+Kaiser Ventures corporation was founded by an American industrialist who became known as the father of modern American shipbuilding?,Henry J. Kaiser,I don't have any information about Kaiser Ventures Corporation or the founder of this company.,"['shipbuilding', 'American', 'Kaiser Ventures corporation', 'American shipbuilding', 'Kaiser Ventures']","American:
+- contains administrative territorial entity: Pennsylvania
+Pennsylvania:
+- shares border with: New York City
+- located in the administrative territorial entity: American
+- country: American
+New York City:
+- country: United States
+- owner of: Jacob K. Javits Convention Center
+- shares border with: Pennsylvania
+- twinned administrative body: Los Angeles
+United States:
+- contains administrative territorial entity: Arkansas
+- diplomatic relation: Ghana
+- diplomatic relation: Czechoslovakia
+- diplomatic relation: United States
+- contains administrative territorial entity: New Jersey
+- capital: New York City
+- contains administrative territorial entity: Minnesota
+- office held by head of government: President
+- contains administrative territorial entity: Maine
+- contains administrative territorial entity: New York
+- contains administrative territorial entity: California
+- contains administrative territorial entity: Mendocino County, California
+- contains administrative territorial entity: Mendocino County
+- contains administrative territorial entity: Idaho
+- contains administrative territorial entity: Oregon
+- contains administrative territorial entity: Utah
+- contains administrative territorial entity: Massachusetts
+- contains administrative territorial entity: Nebraska
+Jacob K. Javits Convention Center:
+- owned by: New York City
+- location: New York City
+- located in the administrative territorial entity: New York City
+Los Angeles:
+- country: American
+- twinned administrative body: New York City",0.1111111083333334,0.5526799559593201,0.3333333333333333,3.8519017696380615
+"What is the name for the adventure in ""Tunnels and Trolls"", a game designed by Ken St. Andre?",Arena of Khazan,"The adventure in ""Tunnels and Trolls,"" a game designed by Ken St. Andre, is named **""The Temple of the Seven Stars.""**","['Tunnels and Trolls', 'Ken St. Andre']",,0.07999999788800007,0.4113664925098419,0.3333333333333333,3.736337423324585
+"When was Poison's album ""Shut Up, Make Love"" released?",2000,"The album ""Open Up and Say... Ahh!"" was released in 1988.","[""Poison's"", 'Poison', 'album', 'Shut Up, Make Love']",,0.0,0.23817460238933563,0.0,3.8567936420440674
+"Hayden is a singer-songwriter from Canada, but where does Buck-Tick hail from?","Fujioka, Gunma",Buck-Tick hails from Japan.,"['Buck-Tick', 'Canada']",,0.0,0.27239593863487244,0.0,3.0766701698303223
+Which  French ace pilot and adventurer fly L'Oiseau Blanc,Charles Eugène,The French ace pilot and adventurer who flew L'Oiseau Blanc is Charles Nungesser.,"['adventurer', 'French', 'ace pilot', ""L'Oiseau Blanc""]",,0.13333333102222228,0.3561011552810669,0.5,3.664705276489258
+Are Freakonomics and In the Realm of the Hackers both American documentaries?,no,"I don't have any information about ""Freakonomics"" or ""In the Realm of the Hackers.""","['documentary', 'American', 'Freakonomics', 'documentaries', 'In the Realm of the Hackers']","American:
+- contains administrative territorial entity: Pennsylvania
+Pennsylvania:
+- shares border with: New York City
+- located in the administrative territorial entity: American
+- country: American
+New York City:
+- country: United States
+- owner of: Jacob K. Javits Convention Center
+- shares border with: Pennsylvania
+- twinned administrative body: Los Angeles
+United States:
+- contains administrative territorial entity: Arkansas
+- diplomatic relation: Ghana
+- diplomatic relation: Czechoslovakia
+- diplomatic relation: United States
+- contains administrative territorial entity: New Jersey
+- capital: New York City
+- contains administrative territorial entity: Minnesota
+- office held by head of government: President
+- contains administrative territorial entity: Maine
+- contains administrative territorial entity: New York
+- contains administrative territorial entity: California
+- contains administrative territorial entity: Mendocino County, California
+- contains administrative territorial entity: Mendocino County
+- contains administrative territorial entity: Idaho
+- contains administrative territorial entity: Oregon
+- contains administrative territorial entity: Utah
+- contains administrative territorial entity: Massachusetts
+- contains administrative territorial entity: Nebraska
+Jacob K. Javits Convention Center:
+- owned by: New York City
+- location: New York City
+- located in the administrative territorial entity: New York City
+Los Angeles:
+- country: American
+- twinned administrative body: New York City",0.0,0.12069325149059296,1.0,5.015917778015137
+"Which band, Letters to Cleo or Screaming Trees, had more members?",Letters to Cleo,"To determine which band, Letters to Cleo or Screaming Trees, had more members, we need to look at the number of members in each band as listed in the Knowledge Graph:
+
+- **Letters to Cleo**: Members include Kay Hanley, Michael Eisenstein, Greg McKenna, Tom Polce, and Scott Putesky.
+- **Screaming Trees**: Members include Mark Lanegan, Gary Lee Conner, Van Conner, and Barrett Martin.
+
+Based on this information:
+-","['Screaming Trees', 'band', 'Letters to Cleo']",,0.09836065480247247,0.4172056317329407,1.0,5.670595169067383
+Alexander Kerensky was defeated and destroyed by the Bolsheviks in the course of a civil war that ended when ?,October 1922,The civil war ended in 1922.,"['Alexander Kerensky', 'Bolsheviks', 'civil war', 'a civil war']",,0.24999999625000005,0.4741649329662323,0.5,3.9404797554016113
+Seven Brief Lessons on Physics was written by an Italian physicist that has worked in France since what year?,2000,"Seven Brief Lessons on Physics was written by Carlo Rovelli, an Italian physicist who has worked in France since 1986.","['Physics', 'physicist', 'Italian', 'Seven Brief Lessons on Physics']",,0.0,0.043796394020318985,0.0,4.275049448013306
+"The Livesey Hal War Memorial commemorates the fallen of which war, that had over 60 million casualties?",World War II,The Livesey Hall War Memorial commemorates the fallen of World War I.,"['Hal War Memorial', 'War Memorial', 'war', 'Memorial', 'Livesey Hal War Memorial']",,0.28571428234693885,0.3998398780822754,0.6666666666666666,2.8150103092193604
+Are both Elko Regional Airport and Gerald R. Ford International Airport located in Michigan?,no,"No, they are not. Elko Regional Airport is located in Nevada, while Gerald R. Ford International Airport is located in Michigan.","['Gerald R. Ford International Airport', 'Elko Regional Airport', 'Michigan']",,0.0,0.11038809269666672,1.0,5.4508936405181885
+Ralph Hefferline was a psychology professor at a university that is located in what city?,New York City,"Ralph Hefferline was a psychology professor at the University of Chicago, which is located in Chicago.","['psychology', 'psychology professor', 'university', 'Ralph Hefferline']",,0.0,0.21261157095432281,0.0,2.7117340564727783
+Which dog's ancestors include Gordon and Irish Setters: the Manchester Terrier or the Scotch Collie?,Scotch Collie,The Scotch Collie has ancestors that include Gordon and Irish Setters.,"['Manchester Terrier', 'Scotch Collie', 'Irish Setter']",,0.30769230508875745,0.7457324862480164,1.0,4.495291233062744
+Where is the company that Sachin Warrier worked for as a software engineer headquartered? ,Mumbai,"To answer the question, we need to identify the company Sachin Warrier worked for as a software engineer and then determine the headquarters of that company. However, the provided Knowledge Graph Information is missing. Without this information, it is impossible to determine the headquarters of the company Sachin Warrier worked for as a software engineer.","['the company', 'Software engineer', 'Sachin Warrier', 'software engineer', 'company']",,0.0,0.19785189628601074,0.0,3.294851303100586
+"A Japanese manga series based on a 16 year old high school student Ichitaka Seto, is written and illustrated by someone born in what year?",1962,"The manga series based on a 16-year-old high school student named Ichitaka Seto is ""Kimi ni Todoke."" The author of this manga is Karuho Shiina, who was born in 1973.","['Japanese', 'manga', 'Japan', 'Ichitaka Seto']",,0.0,0.09347571432590485,0.0,5.057437181472778
+The battle in which Giuseppe Arimondi lost his life secured what for Ethiopia?,sovereignty,The battle in which Giuseppe Arimondi lost his life secured independence for Ethiopia.,"['Ethiopia', 'Giuseppe Arimondi']",,0.0,0.14710837602615356,0.0,2.9703915119171143
+Alfred Balk served as the secretary of the Committee on the Employment of Minority Groups in the News Media under which United States Vice President?,Nelson Rockefeller,I don't have any information about Alfred Balk or the Committee on the Employment of Minority Groups in the News Media.,"['United States', 'Committee on the Employment of Minority Groups in the News Media', 'United States Vice President', 'Vice President', 'Alfred Balk']","United States:
+- contains administrative territorial entity: Arkansas
+- diplomatic relation: Ghana
+- diplomatic relation: Czechoslovakia
+- diplomatic relation: United States
+- contains administrative territorial entity: New Jersey
+- capital: New York City
+- contains administrative territorial entity: Minnesota
+- office held by head of government: President
+- contains administrative territorial entity: Maine
+- contains administrative territorial entity: New York
+- contains administrative territorial entity: California
+- contains administrative territorial entity: Mendocino County, California
+- contains administrative territorial entity: Mendocino County
+- contains administrative territorial entity: Idaho
+- contains administrative territorial entity: Oregon
+- contains administrative territorial entity: Utah
+- contains administrative territorial entity: Massachusetts
+- contains administrative territorial entity: Nebraska
+Arkansas:
+- contains administrative territorial entity: Pulaski County
+- country: United States
+Ghana:
+- diplomatic relation: United States
+- diplomatic relation: Czechoslovakia
+Czechoslovakia:
+- diplomatic relation: United States
+- diplomatic relation: Ghana
+New Jersey:
+- country: United States
+- located in the administrative territorial entity: United States
+New York City:
+- country: United States
+- owner of: Jacob K. Javits Convention Center
+- shares border with: Pennsylvania
+- twinned administrative body: Los Angeles
+Minnesota:
+- contains administrative territorial entity: Big Stone County
+- country: United States
+President:
+- country: United States
+- officeholder: Obamas
+- country: USA
+Maine:
+- country: United States
+New York:
+- contains administrative territorial entity: Brooklyn
+- country: United States
+California:
+- country: United States
+- contains administrative territorial entity: Mendocino County
+- located in the administrative territorial entity: United States
+Mendocino County, California:
+- country: United States
+Mendocino County:
+- country: United States
+- located in the administrative territorial entity: California
+Idaho:
+- country: United States
+Oregon:
+- country: United States
+Utah:
+- country: United States
+Massachusetts:
+- contains administrative territorial entity: Hampshire County
+- country: United States
+Nebraska:
+- country: United States
+- capital: Lincoln
+Pulaski County:
+- located in the administrative territorial entity: Arkansas
+- country: United States
+Jacob K. Javits Convention Center:
+- owned by: New York City
+- location: New York City
+- located in the administrative territorial entity: New York City
+Pennsylvania:
+- shares border with: New York City
+- located in the administrative territorial entity: American
+- country: American
+Los Angeles:
+- country: American
+- twinned administrative body: New York City
+Big Stone County:
+- located in the administrative territorial entity: Minnesota
+- country: United States
+- named after: DeWitt Clinton
+Obamas:
+- position held: President
+- country: United States
+- country: USA
+Brooklyn:
+- located in the administrative territorial entity: New York
+Hampshire County:
+- contains administrative territorial entity: Amherst
+- located in the administrative territorial entity: Massachusetts
+- contains administrative territorial entity: Northampton
+- country: United States
+- capital: Northampton
+Lincoln:
+- country: United States
+American:
+- contains administrative territorial entity: Pennsylvania
+DeWitt Clinton:
+- position held: New York Governor
+Amherst:
+- located in the administrative territorial entity: Hampshire County
+- country: United States
+- located in the administrative territorial entity: Hampshire County, Massachusetts
+Northampton:
+- located in the administrative territorial entity: Hampshire County
+- located in the administrative territorial entity: Hampshire County, Massachusetts
+- country: United States
+- located in the administrative territorial entity: United
+- located in: Hampshire County
+- located in the administrative territorial: Hampshire County",0.0,0.0886293426156044,0.0,4.620863437652588
+"A medieval fortress in Dirleton, East Lothian, Scotland borders on the south side of what coastal area?",Yellowcraig,"The medieval fortress in Dirleton, East Lothian, Scotland borders on the south side of the Firth of Forth.","['Dirleton', 'Dirleton, East Lothian', 'Scotland', 'East Lothian']",,0.0,-0.06222040578722954,0.0,7.524368524551392
+Who is the writer of this song that was inspired by words on a tombstone and was the first track on the box set Back to Mono?,Phil Spector,"The writer of the song ""Tombstone Blues,"" which was inspired by words on a tombstone and was the first track on the box set *Back to Mono*, is Bob Dylan.","['Back to Mono', 'band', 'Box set', 'box set', 'album', 'studio album']",,0.0,0.15637743473052979,0.0,3.448072910308838
+What type of forum did a former Soviet statesman initiate?,Organizations could come together to address global issues,A former Soviet statesman initiated an international forum focused on economic cooperation.,"['former', 'Soviet', 'former Soviet', 'former Soviet statesman', 'statesman']",,0.0,0.3411707878112793,0.0,3.0541887283325195
+Are Ferocactus and Silene both types of plant?,yes,"Yes, both Ferocactus and Silene are types of plants.","['Ferocactus', 'plant', 'Silene']",,0.0,0.13035431504249573,1.0,4.579893112182617
+Which British first-generation jet-powered medium bomber was used in the South West Pacific theatre of World War II?,English Electric Canberra,I don't have information about British first-generation jet-powered medium bombers or their usage in the South West Pacific theatre of World War II.,"['World War II', 'South West Pacific theatre', 'South West Pacific theatre of World War II', 'British']","British:
+- contains administrative territorial entity: English
+- office held by head of government: Deputy Prime Minister
+English:
+- located in the administrative territorial entity: British
+- country: British
+Deputy Prime Minister:
+- part of: British Government
+- country: British
+- different from: First Secretary of State
+- inception: 2003
+British Government:
+- has part: Secretary of State for Constitutional Affairs
+- has part: First Secretary of State
+- has part: Deputy Prime Minister
+First Secretary of State:
+- part of: British Government
+- country: British
+- inception: 2003
+- different from: Deputy Prime Minister
+- subclass of: Deputy Prime Minister
+Secretary of State for Constitutional Affairs:
+- inception: 2003
+- part of: British Government
+- country: British",0.0,0.22313480079174042,0.0,5.172132253646851
+Which year and which conference was the 14th season for this conference as part of the NCAA Division that the Colorado Buffaloes played in with a record of 2-6 in conference play?,2009 Big 12 Conference,"The 14th season for the conference that the Colorado Buffaloes played in with a record of 2-6 in conference play was in 2008, and the conference was the Big 12 Conference.","['NCAA Division', 'Colorado Buffaloes', '14', 'Division', 'NCAA']",,0.22222221969821673,0.5744355320930481,0.75,4.175989866256714
+In 1991 Euromarché was bought by a chain that operated how any hypermarkets at the end of 2016?,"1,462",The chain that bought Euromarché in 1991 operated 457 hypermarkets at the end of 2016.,"['a chain that operated how any hypermarkets', 'chain', 'hypermarkets', '1991', 'Euromarché']",,0.0,0.0601411834359169,0.0,5.747653484344482
+What race track in the midwest hosts a 500 mile race eavery May?,Indianapolis Motor Speedway,The Indianapolis Motor Speedway hosts a 500-mile race every May.,"['500 mile race eavery May', '500', 'race track', '500 mile race', 'midwest']",,0.4615384579881657,0.6462759971618652,1.0,3.130779504776001
+"In what city did the ""Prince of tenors"" star in a film based on an opera by Giacomo Puccini?",Rome,"To answer your question, I need more specific information about the ""Prince of Tenors"" and the film based on Giacomo Puccini's opera. Could you please provide the name of the tenor or any additional details about the film?","['an opera', 'opera', 'Giacomo Puccini']",,0.0,0.2377976030111313,0.0,6.6239333152771
+"Ellie Goulding worked with what other writers on her third studio album, Delirium?","Max Martin, Savan Kotecha and Ilya Salmanzadeh","Ellie Goulding worked with the following writers on her third studio album, *Delirium*:
+
+- Max Martin
+- Savan Kotecha
+- Ali Payami
+- Wayne Hector","['studio album', 'Delirium', 'Ellie Goulding']",,0.2068965480618312,0.3285196125507355,0.42857142857142855,4.844893455505371
+Which Australian city founded in 1838 contains a boarding school opened by a Prime Minister of Australia and named after a school in London of the same name.,"Marion, South Australia",I don't have the information about an Australian city founded in 1838 that contains a boarding school opened by a Prime Minister of Australia and named after a school in London.,"['school in London of the same name', 'Australia', 'a school in London of the same name', 'London', 'Prime Minister of Australia', 'boarding school', 'of the same name']","London:
+- twinned administrative body: New York City
+New York City:
+- country: United States
+- owner of: Jacob K. Javits Convention Center
+- shares border with: Pennsylvania
+- twinned administrative body: Los Angeles
+United States:
+- contains administrative territorial entity: Arkansas
+- diplomatic relation: Ghana
+- diplomatic relation: Czechoslovakia
+- diplomatic relation: United States
+- contains administrative territorial entity: New Jersey
+- capital: New York City
+- contains administrative territorial entity: Minnesota
+- office held by head of government: President
+- contains administrative territorial entity: Maine
+- contains administrative territorial entity: New York
+- contains administrative territorial entity: California
+- contains administrative territorial entity: Mendocino County, California
+- contains administrative territorial entity: Mendocino County
+- contains administrative territorial entity: Idaho
+- contains administrative territorial entity: Oregon
+- contains administrative territorial entity: Utah
+- contains administrative territorial entity: Massachusetts
+- contains administrative territorial entity: Nebraska
+Jacob K. Javits Convention Center:
+- owned by: New York City
+- location: New York City
+- located in the administrative territorial entity: New York City
+Pennsylvania:
+- shares border with: New York City
+- located in the administrative territorial entity: American
+- country: American
+Los Angeles:
+- country: American
+- twinned administrative body: New York City
+Arkansas:
+- contains administrative territorial entity: Pulaski County
+- country: United States
+Ghana:
+- diplomatic relation: United States
+- diplomatic relation: Czechoslovakia
+Czechoslovakia:
+- diplomatic relation: United States
+- diplomatic relation: Ghana
+New Jersey:
+- country: United States
+- located in the administrative territorial entity: United States
+Minnesota:
+- contains administrative territorial entity: Big Stone County
+- country: United States
+President:
+- country: United States
+- officeholder: Obamas
+- country: USA
+Maine:
+- country: United States
+New York:
+- contains administrative territorial entity: Brooklyn
+- country: United States
+California:
+- country: United States
+- contains administrative territorial entity: Mendocino County
+- located in the administrative territorial entity: United States
+Mendocino County, California:
+- country: United States
+Mendocino County:
+- country: United States
+- located in the administrative territorial entity: California
+Idaho:
+- country: United States
+Oregon:
+- country: United States
+Utah:
+- country: United States
+Massachusetts:
+- contains administrative territorial entity: Hampshire County
+- country: United States
+Nebraska:
+- country: United States
+- capital: Lincoln
+American:
+- contains administrative territorial entity: Pennsylvania",0.06666666486666671,0.4287523031234741,0.3333333333333333,5.248213529586792
+D1NZ is a series based on what oversteering technique?,Drifting,D1NZ is a series based on the **drift** oversteering technique.,"['what oversteering technique', 'oversteering', 'series', 'D1NZ', 'oversteering technique']",,0.0,0.3670201897621155,0.0,3.280256509780884
+who is younger Keith Bostic or Jerry Glanville ?,Keith Bostic,Keith Bostic is younger than Jerry Glanville.,"['Jerry Glanville', 'Keith Bostic']",,0.4444444409876544,0.6755094528198242,1.0,4.640137434005737
+"According to the 2001 census, what was the population of the city in which Kirton End is located?","35,124",I don't have information about the 2001 census or the location of Kirton End.,"['2001 census', '2001', 'city', 'the city', 'Kirton End']","city:
+- country: United States
+United States:
+- contains administrative territorial entity: Arkansas
+- diplomatic relation: Ghana
+- diplomatic relation: Czechoslovakia
+- diplomatic relation: United States
+- contains administrative territorial entity: New Jersey
+- capital: New York City
+- contains administrative territorial entity: Minnesota
+- office held by head of government: President
+- contains administrative territorial entity: Maine
+- contains administrative territorial entity: New York
+- contains administrative territorial entity: California
+- contains administrative territorial entity: Mendocino County, California
+- contains administrative territorial entity: Mendocino County
+- contains administrative territorial entity: Idaho
+- contains administrative territorial entity: Oregon
+- contains administrative territorial entity: Utah
+- contains administrative territorial entity: Massachusetts
+- contains administrative territorial entity: Nebraska
+Arkansas:
+- contains administrative territorial entity: Pulaski County
+- country: United States
+Ghana:
+- diplomatic relation: United States
+- diplomatic relation: Czechoslovakia
+Czechoslovakia:
+- diplomatic relation: United States
+- diplomatic relation: Ghana
+New Jersey:
+- country: United States
+- located in the administrative territorial entity: United States
+New York City:
+- country: United States
+- owner of: Jacob K. Javits Convention Center
+- shares border with: Pennsylvania
+- twinned administrative body: Los Angeles
+Minnesota:
+- contains administrative territorial entity: Big Stone County
+- country: United States
+President:
+- country: United States
+- officeholder: Obamas
+- country: USA
+Maine:
+- country: United States
+New York:
+- contains administrative territorial entity: Brooklyn
+- country: United States
+California:
+- country: United States
+- contains administrative territorial entity: Mendocino County
+- located in the administrative territorial entity: United States
+Mendocino County, California:
+- country: United States
+Mendocino County:
+- country: United States
+- located in the administrative territorial entity: California
+Idaho:
+- country: United States
+Oregon:
+- country: United States
+Utah:
+- country: United States
+Massachusetts:
+- contains administrative territorial entity: Hampshire County
+- country: United States
+Nebraska:
+- country: United States
+- capital: Lincoln
+Pulaski County:
+- located in the administrative territorial entity: Arkansas
+- country: United States
+Jacob K. Javits Convention Center:
+- owned by: New York City
+- location: New York City
+- located in the administrative territorial entity: New York City
+Pennsylvania:
+- shares border with: New York City
+- located in the administrative territorial entity: American
+- country: American
+Los Angeles:
+- country: American
+- twinned administrative body: New York City
+Big Stone County:
+- located in the administrative territorial entity: Minnesota
+- country: United States
+- named after: DeWitt Clinton
+Obamas:
+- position held: President
+- country: United States
+- country: USA
+Brooklyn:
+- located in the administrative territorial entity: New York
+Hampshire County:
+- contains administrative territorial entity: Amherst
+- located in the administrative territorial entity: Massachusetts
+- contains administrative territorial entity: Northampton
+- country: United States
+- capital: Northampton
+Lincoln:
+- country: United States",0.0,-0.013205552473664284,0.0,3.5231096744537354
+Are both Cypress and Ajuga genera?,no,"Yes, both Cypress and Ajuga are genera.","['Ajuga', 'genera', 'Cypress']",,0.0,0.11863603442907333,0.0,4.131245374679565
+What distinction is held by the former NBA player who was a member of the Charlotte Hornets during their 1992-93 season and was head coach for the WNBA team Charlotte Sting?,shortest player ever to play in the National Basketball Association,The former NBA player who was a member of the Charlotte Hornets during their 1992-93 season and was head coach for the WNBA team Charlotte Sting is the first woman to be inducted into the Naismith Memorial Basketball Hall of Fame as both a player and a coach.,"['1992-93 season', 'NBA', 'Charlotte Sting', 'WNBA', 'Charlotte Hornets']",,0.17021276260751475,0.34505653381347656,0.6,5.097529649734497
+What is the name of the executive producer of the film that has a score composed by Jerry Goldsmith?,Ronald Shusett,"To determine the name of the executive producer of the film with a score composed by Jerry Goldsmith, we need to identify the specific film first.
+
+From the Knowledge Graph Information:
+
+- Jerry Goldsmith composed the score for ""The Omen.""
+
+Next, we need to find out who the executive producer of ""The Omen"" is:
+
+- The executive producer of ""The Omen"" is Harvey Bernhard.
+
+Therefore, the name of the executive producer of the film with a score composed by Jerry Goldsmith","['Jerry Goldsmith', 'score', 'a score']",,0.0,0.06472457945346832,0.0,4.190010070800781
+"Who was born earlier, Emma Bull or Virginia Woolf?",Adeline Virginia Woolf,Virginia Woolf was born earlier.,"['Emma Bull', 'Virginia Woolf']",,0.49999999531250006,0.7404819130897522,0.6666666666666666,3.800408363342285
+What was the Roud Folk Song Index of the nursery rhyme inspiring What Are Little Girls Made Of?,821,"The Roud Folk Song Index number for the nursery rhyme ""What Are Little Boys Made Of?"" is 19846.","['What Are Little Girls Made Of?', 'What Are Little Girls Made Of', 'nursery rhyme', 'Roud Folk Song Index']",,0.0,0.14897485077381134,0.0,3.4998703002929688
+Scott Parkin has been a vocal critic of Exxonmobil and another corporation that has operations in how many countries ?,more than 70 countries,"The other corporation mentioned is Chevron, which has operations in 180 countries.","['Exxonmobil', 'multinational corporation', 'corporations', 'corporation', 'Scott Parkin']",,0.12499999625000012,0.29392680525779724,0.25,3.149907350540161
+What WB supernatrual drama series was Jawbreaker star Rose Mcgowan best known for being in?,Charmed,"Rose McGowan is best known for her role in the WB supernatural drama series ""Charmed.""","['Rose Mcgowan', 'Jawbreaker']",,0.0,0.561526358127594,1.0,4.548721551895142
+Vince Phillips held a junior welterweight title by an organization recognized by what larger Hall of Fame?,International Boxing Hall of Fame,The International Boxing Hall of Fame.,"['welterweight', 'Vince Phillips', 'Hall of Fame', 'junior welterweight title', 'Junior welterweight', 'junior welterweight']",,0.9090909041322315,0.9628660678863525,1.0,3.310153007507324
+"What is the name of the singer who's song was released as the lead single from the album ""Confessions"", and that had popular song stuck behind for eight consecutive weeks?",Usher,"The singer whose song was released as the lead single from the album ""Confessions"" and stayed at number one for eight consecutive weeks is Usher.","['lead single', 'popular song', 'album', 'Confessions']",,0.079999999232,0.6236507892608643,1.0,4.61014199256897
+who is the younger brother of The episode guest stars of The Hard Easy ,Bill Murray,"I don't have information about the guest stars of ""The Hard Easy.""","['The episode guest stars', 'The Hard Easy', 'The episode']",,0.0,0.2208474576473236,0.0,3.860595464706421
+The 2017–18 Wigan Athletic F.C. season will be a year in which the team competes in the league cup known as what for sponsorship reasons?,Carabao Cup,The 2017–18 Wigan Athletic F.C. season will be a year in which the team competes in the league cup known as the **EFL Cup** for sponsorship reasons.,"['Wigan Athletic F.C.', 'league cup', '2017', '2017–18 Wigan Athletic F.C. season', 'league cup known as what for sponsorship reasons']",,0.0,0.22901101410388947,0.5,7.511109113693237
+"Which of Tara Strong major voice role in animated series is an American animated television series based on the DC Comics fictional superhero team, the ""Teen Titans""?",Teen Titans Go!,"Tara Strong's major voice role in the animated series ""Teen Titans"" is Raven.","['superhero', 'Teen Titans', 'Tara Strong', 'DC Comics']",,0.0,0.5209355354309082,0.6666666666666666,5.1775267124176025
+What is the inhabitant of the city where  122nd SS-Standarte was formed in2014,"276,170 inhabitants",The 122nd SS-Standarte was formed in Munich. The inhabitants of Munich are called Münchener.,"['2014', 'SS', '122nd SS-Standarte', 'Standarte', '122nd SS-Standarte was formed in2014', '122nd SS-Standarte <subj>2014', 'SS-Standarte']",,0.14285714040816327,0.16643494367599487,0.5,4.070044994354248
+What color clothing do people of the Netherlands wear during Oranjegekte or to celebrate the national holiday Koningsdag? ,orange,"During Oranjegekte and Koningsdag, people in the Netherlands wear orange clothing.","['Netherlands', 'Koningsdag', 'Oranjegekte']",,0.16666666513888892,0.45030567049980164,1.0,6.215277194976807
+"What was the name of the 1996 loose adaptation of William Shakespeare's ""Romeo & Juliet"" written by James Gunn?",Tromeo and Juliet,"The 1996 loose adaptation of William Shakespeare's ""Romeo & Juliet"" written by James Gunn is called **""Tromeo and Juliet.""**","['James Gunn', 'Romeo & Juliet', ""William Shakespeare's"", 'William Shakespeare']",,0.1739130412098299,0.6759461164474487,1.0,6.190222263336182
+Robert Suettinger was the national intelligence officer under which former Governor of Arkansas?,William Jefferson Clinton,I don't have any information about Robert Suettinger or his association with any former Governor of Arkansas.,"['Governor', 'intelligence officer', 'Governor of Arkansas', 'Governor of Arkansas?', 'Robert Suettinger', 'national intelligence officer', 'Arkansas']","Arkansas:
 - contains administrative territorial entity: Pulaski County
 - country: United States
 Pulaski County:
 - located in the administrative territorial entity: Arkansas
-- country: United States",0.0,0.11292943358421326,0.0,4.055825233459473
+- country: United States
+United States:
+- contains administrative territorial entity: Arkansas
+- diplomatic relation: Ghana
+- diplomatic relation: Czechoslovakia
+- diplomatic relation: United States
+- contains administrative territorial entity: New Jersey
+- capital: New York City
+- contains administrative territorial entity: Minnesota
+- office held by head of government: President
+- contains administrative territorial entity: Maine
+- contains administrative territorial entity: New York
+- contains administrative territorial entity: California
+- contains administrative territorial entity: Mendocino County, California
+- contains administrative territorial entity: Mendocino County
+- contains administrative territorial entity: Idaho
+- contains administrative territorial entity: Oregon
+- contains administrative territorial entity: Utah
+- contains administrative territorial entity: Massachusetts
+- contains administrative territorial entity: Nebraska
+Ghana:
+- diplomatic relation: United States
+- diplomatic relation: Czechoslovakia
+Czechoslovakia:
+- diplomatic relation: United States
+- diplomatic relation: Ghana
+New Jersey:
+- country: United States
+- located in the administrative territorial entity: United States
+New York City:
+- country: United States
+- owner of: Jacob K. Javits Convention Center
+- shares border with: Pennsylvania
+- twinned administrative body: Los Angeles
+Minnesota:
+- contains administrative territorial entity: Big Stone County
+- country: United States
+President:
+- country: United States
+- officeholder: Obamas
+- country: USA
+Maine:
+- country: United States
+New York:
+- contains administrative territorial entity: Brooklyn
+- country: United States
+California:
+- country: United States
+- contains administrative territorial entity: Mendocino County
+- located in the administrative territorial entity: United States
+Mendocino County, California:
+- country: United States
+Mendocino County:
+- country: United States
+- located in the administrative territorial entity: California
+Idaho:
+- country: United States
+Oregon:
+- country: United States
+Utah:
+- country: United States
+Massachusetts:
+- contains administrative territorial entity: Hampshire County
+- country: United States
+Nebraska:
+- country: United States
+- capital: Lincoln
+Jacob K. Javits Convention Center:
+- owned by: New York City
+- location: New York City
+- located in the administrative territorial entity: New York City
+Pennsylvania:
+- shares border with: New York City
+- located in the administrative territorial entity: American
+- country: American
+Los Angeles:
+- country: American
+- twinned administrative body: New York City
+Big Stone County:
+- located in the administrative territorial entity: Minnesota
+- country: United States
+- named after: DeWitt Clinton
+Obamas:
+- position held: President
+- country: United States
+- country: USA
+Brooklyn:
+- located in the administrative territorial entity: New York
+Hampshire County:
+- contains administrative territorial entity: Amherst
+- located in the administrative territorial entity: Massachusetts
+- contains administrative territorial entity: Northampton
+- country: United States
+- capital: Northampton
+Lincoln:
+- country: United States",0.0,0.26912593841552734,0.0,3.699542284011841
+What American professional Hawaiian surfer born 18 October 1992 won the Rip Curl Pro Portugal?,John John Florence,I don't have any information about an American professional Hawaiian surfer named John John Florence who won the Rip Curl Pro Portugal.,"['American', 'surfer', 'Rip Curl Pro Portugal', '18 October 1992', 'Hawaiian', 'Hawaiian surfer']","American:
+- contains administrative territorial entity: Pennsylvania
+Pennsylvania:
+- shares border with: New York City
+- located in the administrative territorial entity: American
+- country: American
+New York City:
+- country: United States
+- owner of: Jacob K. Javits Convention Center
+- shares border with: Pennsylvania
+- twinned administrative body: Los Angeles
+United States:
+- contains administrative territorial entity: Arkansas
+- diplomatic relation: Ghana
+- diplomatic relation: Czechoslovakia
+- diplomatic relation: United States
+- contains administrative territorial entity: New Jersey
+- capital: New York City
+- contains administrative territorial entity: Minnesota
+- office held by head of government: President
+- contains administrative territorial entity: Maine
+- contains administrative territorial entity: New York
+- contains administrative territorial entity: California
+- contains administrative territorial entity: Mendocino County, California
+- contains administrative territorial entity: Mendocino County
+- contains administrative territorial entity: Idaho
+- contains administrative territorial entity: Oregon
+- contains administrative territorial entity: Utah
+- contains administrative territorial entity: Massachusetts
+- contains administrative territorial entity: Nebraska
+Jacob K. Javits Convention Center:
+- owned by: New York City
+- location: New York City
+- located in the administrative territorial entity: New York City
+Los Angeles:
+- country: American
+- twinned administrative body: New York City",0.17391304189035917,0.5129476189613342,1.0,4.907616853713989
+What is the middle name of the actress who plays Bobbi Bacha in Suburban Madness?,Ann,The actress who plays Bobbi Bacha in Suburban Madness is named Lisa Marie.,"['Bobbi Bacha', 'actress', 'Suburban Madness']",,0.0,0.2401132881641388,0.0,5.37357759475708
+Alvaro Mexia had a diplomatic mission with which tribe of indigenous people?,Apalachees,"The knowledge graph does not provide information about Alvaro Mexia having a diplomatic mission with any tribe of indigenous people. Therefore, I cannot answer the question based on the given information.","['Alvaro Mexia', 'tribe', 'diplomatic mission', 'indigenous people']",,0.0,0.043080344796180725,0.0,4.55119252204895
+What nationality were social anthropologists Alfred Gell and Edmund Leach?,British,"Alfred Gell was British, and Edmund Leach was also British.","['social anthropologists', 'Alfred Gell', 'Edmund Leach', 'social anthropologist']",,0.1999999982,0.3778856694698334,1.0,5.387224912643433
+In which year was the King who made the 1925 Birthday Honours born?,1865,"To determine the year the King who made the 1925 Birthday Honours was born, we need to identify which monarch was reigning during that time.
+
+The 1925 Birthday Honours were made by King George V. King George V was born in 1865.","['1924 Birthday Honours', '1925', '1925 Birthday Honours', '25 Birthday Honours', '1924', 'the 1925 Birthday Honours']",,0.06451612840790844,0.36900877952575684,1.0,4.240158796310425
+"What is the county seat of the county where East Lempster, New Hampshire is located?",Newport,"To determine the county seat of the county where East Lempster, New Hampshire is located, we need to identify the county first.
+
+East Lempster, New Hampshire is located in Sullivan County.
+
+The county seat of Sullivan County, New Hampshire is Newport.","['East Lempster', 'county seat', 'county', 'East Lempster, New Hampshire']",,0.07692307618343196,0.3721899390220642,1.0,5.330157518386841
+The Album Against the Wind was the 11th Album of a Rock singer Robert C Seger born may 6 1945. What was the Rock singers stage name ?,Bob Seger,Bob Seger,"['The Album Against the Wind', 'Robert C Seger', 'may 6 1945', 'Rock']",,0.999999995,1.0,1.0,5.447389602661133
+Rostker v. Goldberg held that the practice of what way of filling armed forces vacancies was consitutional?,Conscription,Rostker v. Goldberg held that the practice of using a male-only draft to fill armed forces vacancies was constitutional.,"['Consitutional', 'constitutional', 'Rostker v. Goldberg', 'consitutional']",,0.0,0.4593353569507599,0.0,3.5782899856567383
+"Handi-Snacks are a snack food product line sold by what American multinational confectionery, food, and beverage company that is based in Illinois?","Mondelez International, Inc.",I don't have the information about Handi-Snacks or the company that sells them.,"['American', 'Illinois', 'snack food', 'confectionery', 'food']","American:
+- contains administrative territorial entity: Pennsylvania
+Pennsylvania:
+- shares border with: New York City
+- located in the administrative territorial entity: American
+- country: American
+New York City:
+- country: United States
+- owner of: Jacob K. Javits Convention Center
+- shares border with: Pennsylvania
+- twinned administrative body: Los Angeles
+United States:
+- contains administrative territorial entity: Arkansas
+- diplomatic relation: Ghana
+- diplomatic relation: Czechoslovakia
+- diplomatic relation: United States
+- contains administrative territorial entity: New Jersey
+- capital: New York City
+- contains administrative territorial entity: Minnesota
+- office held by head of government: President
+- contains administrative territorial entity: Maine
+- contains administrative territorial entity: New York
+- contains administrative territorial entity: California
+- contains administrative territorial entity: Mendocino County, California
+- contains administrative territorial entity: Mendocino County
+- contains administrative territorial entity: Idaho
+- contains administrative territorial entity: Oregon
+- contains administrative territorial entity: Utah
+- contains administrative territorial entity: Massachusetts
+- contains administrative territorial entity: Nebraska
+Jacob K. Javits Convention Center:
+- owned by: New York City
+- location: New York City
+- located in the administrative territorial entity: New York City
+Los Angeles:
+- country: American
+- twinned administrative body: New York City",0.0,0.2562505900859833,0.0,5.573472261428833
+"What was the name of a woman from the book titled ""Their Lives: The Women Targeted by the Clinton Machine "" and was also a former white house intern?",Monica Lewinsky,"The name of the woman from the book titled ""Their Lives: The Women Targeted by the Clinton Machine"" who was also a former White House intern is Monica Lewinsky.","['white house intern', 'book', 'intern', 'Their Lives: The Women Targeted by the Clinton Machine', 'white house']",,0.14285714153061227,0.6924666166305542,1.0,5.370298862457275
+"When was the American lawyer, lobbyist and political consultant who was a senior member of the presidential campaign of Donald Trump born?","April 1, 1949","I don't have the information about the birthdate of the American lawyer, lobbyist, and political consultant who was a senior member of the presidential campaign of Donald Trump.","['presidential campaign of Donald Trump', 'American', 'presidential campaign', 'Donald Trump']","American:
+- contains administrative territorial entity: Pennsylvania
+Pennsylvania:
+- shares border with: New York City
+- located in the administrative territorial entity: American
+- country: American
+New York City:
+- country: United States
+- owner of: Jacob K. Javits Convention Center
+- shares border with: Pennsylvania
+- twinned administrative body: Los Angeles
+United States:
+- contains administrative territorial entity: Arkansas
+- diplomatic relation: Ghana
+- diplomatic relation: Czechoslovakia
+- diplomatic relation: United States
+- contains administrative territorial entity: New Jersey
+- capital: New York City
+- contains administrative territorial entity: Minnesota
+- office held by head of government: President
+- contains administrative territorial entity: Maine
+- contains administrative territorial entity: New York
+- contains administrative territorial entity: California
+- contains administrative territorial entity: Mendocino County, California
+- contains administrative territorial entity: Mendocino County
+- contains administrative territorial entity: Idaho
+- contains administrative territorial entity: Oregon
+- contains administrative territorial entity: Utah
+- contains administrative territorial entity: Massachusetts
+- contains administrative territorial entity: Nebraska
+Jacob K. Javits Convention Center:
+- owned by: New York City
+- location: New York City
+- located in the administrative territorial entity: New York City
+Los Angeles:
+- country: American
+- twinned administrative body: New York City",0.0,0.2629465162754059,0.0,4.699632406234741
+"In what year was the novel that Lourenço Mutarelli based ""Nina"" on based first published?",1866,"The novel that Lourenço Mutarelli based ""Nina"" on was first published in 1984.","['Nina', 'Lourenço Mutarelli']",,0.0,-0.016797857359051704,0.0,3.7096898555755615
+Where are Teide National Park and Garajonay National Park located?,"Canary Islands, Spain","Teide National Park is located in Tenerife, Canary Islands, Spain.
+Garajonay National Park is located in La Gomera, Canary Islands, Spain.","['Garajonay National Park', 'Teide National Park']",,0.374999996953125,0.5243479013442993,1.0,5.7300944328308105
+How many copies of Roald Dahl's variation on a popular anecdote sold?,250 million,"The information provided in the Knowledge Graph does not include details about the number of copies sold for Roald Dahl's variation on a popular anecdote. Therefore, I cannot provide an answer to this question based on the given information.","[""Roald Dahl's variation on a popular anecdote"", 'Roald Dahl', 'anecdote', 'variation on a popular anecdote', 'popular anecdote']",,0.0,0.2017926722764969,0.0,5.409753799438477
+What occupation do Chris Menges and Aram Avakian share?,director,Cinematographer,"['Aram Avakian', 'Chris Menges', 'occupation']",,0.0,0.6801987886428833,0.0,5.822626829147339
+Andrew Jaspan was the co-founder of what not-for-profit media outlet?,The Conversation,Andrew Jaspan was the co-founder of The Conversation.,"['media outlet', 'Andrew Jaspan', 'co-founder', 'media outlet?<subj> Andrew Jaspan', 'not-for-profit']",,0.39999999680000003,0.34512344002723694,1.0,5.170145034790039
+Which American film director hosted the 18th Independent Spirit Awards in 2002?,John Waters,Quentin Tarantino,"['2002', 'Independent Spirit Awards', '18th Independent Spirit Awards']",,0.0,0.36426639556884766,0.0,4.569435358047485
+Where does the hotel and casino located in which Bill Cosby's third album was recorded?,Las Vegas Strip in Paradise,"The hotel and casino where Bill Cosby's third album was recorded is the Flamingo Hotel & Casino, located in Las Vegas, Nevada.","[""Bill Cosby's"", ""Bill Cosby's third album"", 'third album was recorded', 'third album', 'Bill Cosby', 'album']",,0.07407407105624156,0.5148023366928101,0.6,3.518232583999634
+Do the drinks Gibson and Zurracapote both contain gin?,no,"No, they do not. A Gibson contains gin, while a Zurracapote contains rum.","['Gibson and Zurracapote', 'gin', 'Zurracapote', 'Gibson']",,0.0,0.05272600054740906,1.0,4.122042894363403
+"In what month is the annual documentary film festival, that is presented by the fortnightly published British journal of literary essays, held? ",March and April,I don't have the information about an annual documentary film festival presented by a British journal of literary essays.,"['documentary', 'annual documentary film festival', 'film festival', 'the annual documentary film festival', 'documentary film festival', 'British']","British:
+- contains administrative territorial entity: English
+- office held by head of government: Deputy Prime Minister
+English:
+- located in the administrative territorial entity: British
+- country: British
+Deputy Prime Minister:
+- part of: British Government
+- country: British
+- different from: First Secretary of State
+- inception: 2003
+British Government:
+- has part: Secretary of State for Constitutional Affairs
+- has part: First Secretary of State
+- has part: Deputy Prime Minister
+First Secretary of State:
+- part of: British Government
+- country: British
+- inception: 2003
+- different from: Deputy Prime Minister
+- subclass of: Deputy Prime Minister
+Secretary of State for Constitutional Affairs:
+- inception: 2003
+- part of: British Government
+- country: British",0.0,0.1497759222984314,0.0,3.4503047466278076
+Tysons Galleria is located in what county?,Fairfax County,Tysons Galleria is located in Fairfax County.,"['county', 'what county', 'Tysons Galleria']",,0.4444444409876544,0.5127648711204529,1.0,3.547541856765747
+Bordan Tkachuk was the CEO of a company that provides what sort of products?,IT products and services,Bordan Tkachuk was the CEO of a company that provides financial services.,"['Boris Tkachuk', 'Biran Tkachuk', 'Bordan Tkachuk', 'CEO']",,0.12499999625000012,0.20685358345508575,0.25,4.1021387577056885
+"Which filmmaker was known for animation, Lev Yilmaz or Pamela B. Green?",Levni Yilmaz,"The information provided in the Knowledge Graph does not include any details about Lev Yilmaz or Pamela B. Green being known for animation. Therefore, based on the given information, it is not possible to determine which filmmaker was known for animation.","['Pamela B. Green', 'filmmaker', 'Lev Yilmaz', 'animation']","filmmaker:
+- practiced by: producer
+- practiced by: director
+producer:
+- field of this occupation: filmmaker
+director:
+- field of this occupation: filmmaker",0.052631577950138515,0.4030199944972992,0.5,4.695460319519043
+In which city is the ambassador of the Rabat-Salé-Kénitra administrative region to China based?,Beijing,The ambassador of the Rabat-Salé-Kénitra administrative region to China is based in Beijing.,"['Rabat-Salé-Kénitra', 'Rabat-Salé-Kénitra administrative region', 'China', 'administrative region']",,0.14285714153061227,0.5008667707443237,1.0,7.830245733261108
+Are Yingkou and Fuding the same level of city?,no,"No, Yingkou and Fuding are not at the same administrative level. Yingkou is a prefecture-level city, while Fuding is a county-level city.","['Yingkou', 'Fuding']",,0.0,0.10403651744127274,1.0,6.130181550979614
