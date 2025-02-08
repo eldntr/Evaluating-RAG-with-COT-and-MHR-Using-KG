@@ -17,7 +17,7 @@ qa_dataset, documents = load_and_process_data()
 qa_dataset = qa_dataset[:100]
 documents = documents[:100]
 
-kg_filepath = "combined_kb.pkl"
+kg_filepath = "result/model/combined_kb.pkl"
 if os.path.exists(kg_filepath): 
     print("Loading knowledge graph from file...")
     combined_kb = load_knowledge_graph(kg_filepath)

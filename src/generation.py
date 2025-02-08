@@ -13,27 +13,49 @@ Answer the following question directly and concisely. Ensure the answer is gramm
 
 COT_PROMPT = """
 **Question**: {question}
-    
+
 **Context**: {context}
-    
+
 **Instructions**:
-1. Analyze the question and identify key elements such as entities (e.g., names, organizations), dates, or relationships.
-2. Extract ONLY the most relevant sentences or phrases from the context that directly address the identified key elements.
-3. Formulate a concise answer using the extracted information. Ensure the answer is grammatically correct and directly answers the question.
-4. Follow this exact format:
-    - Final Answer: [A single sentence or phrase that directly answers the question. Avoid unnecessary details.]
-    
-**Answer for This Question**:
+1. **Analyze the Question**:
+   - Identify key elements such as entities (e.g., names, organizations), dates, or relationships.
+   - Determine what information is needed to answer the question.
+   
+2. **Reasoning Process**:
+   - Use the context to logically connect the key elements.
+   - Show your step-by-step reasoning process. Explain how you arrive at each conclusion.
+   
+3. **Extract Relevant Information**:
+   - Highlight ONLY the most relevant sentences or phrases from the context that support your reasoning.
+   
+4. **Formulate the Final Answer**:
+   - Based on your reasoning, provide a concise and grammatically correct answer.
+   - Ensure the answer directly addresses the question.
+   
+**Final Answer**:
+[A single sentence or phrase that directly answers the question. Avoid unnecessary details.]
 """
 
 MHR_PROMPT = """
 **Instructions**:
-Use the information provided in the Knowledge Graph to answer the question. Focus only on relevant details and provide a concise answer.
+Use the information provided in the Knowledge Graph (KG), which has been processed using Breadth-First Search (BFS) to identify relevant multi-hop paths. Answer the question based on the following steps:
+
+**Step-by-Step Guidance**:
+1. **Identify Key Entities**: Extract the main entities mentioned in the question.
+2. **Locate Relevant Information**: Use the precomputed BFS paths in the KG to find relationships between the key entities.
+3. **Validate Relevance**: Ensure all information used directly answers the question.
+
+**Constraints**:
+- The answer must be reached within a maximum of 3 hops.
+- Only use information explicitly provided in the KG.
 
 **Knowledge Graph Information**:
 {formatted_kg}
 
 **Question**: {question}
+
+**Final Answer**:
+[A single sentence or phrase that directly answers the question. Avoid unnecessary details.]
 """
 
 def generate_answer(question, embedding_model=None, generation_model="mistralai/mistral-small-24b-instruct-2501", index=None, bm25=None, documents=None, api_key=None, kg_info=None, prompt_type="default"):
@@ -62,7 +84,7 @@ def generate_answer(question, embedding_model=None, generation_model="mistralai/
     data = {
         "model": generation_model,
         "messages": [{"role": "user", "content": formatted_prompt}],
-        "max_tokens": 100,
+        "max_tokens": 300,
         "temperature": 0.1,
         "top_p": 0.95,
         "repetition_penalty": 1.1,
